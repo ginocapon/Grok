@@ -10,14 +10,14 @@ import { cn } from "@/lib/utils";
 
 export function AboutPreview() {
   const t = useTranslations("aboutPreview");
-  const [mode, setMode] = useState<"real" | "cartoon">("real");
+  const [mode, setMode] = useState<"real" | "cartoon">("cartoon");
 
   return (
     <section className="py-24 md:py-32 px-6 md:px-12 overflow-hidden">
       <div className="mx-auto max-w-7xl">
         <ScrollReveal>
           <div className="grid gap-12 lg:grid-cols-2 lg:gap-20 items-center">
-            <div className="relative aspect-[3/4] max-w-md mx-auto lg:mx-0 w-full group">
+            <div className="relative aspect-[4/5] max-w-lg mx-auto lg:mx-0 w-full group">
               <div className="absolute -inset-4 rounded-sm border border-accent/20 transition-colors group-hover:border-accent/50" />
               <button
                 type="button"
@@ -31,14 +31,14 @@ export function AboutPreview() {
                   fill
                   className={cn(
                     "object-cover transition-all duration-700",
-                    mode === "real" ? "object-top" : "object-center",
-                    mode === "cartoon" && "object-contain bg-black"
+                    mode === "real" ? "object-top" : "object-cover object-center scale-105",
+                    mode === "cartoon" && "bg-black"
                   )}
                   sizes="(max-width: 768px) 100vw, 400px"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg/60 via-transparent to-transparent" />
                 <div className="absolute top-4 left-4 font-mono-tech text-xs bg-bg/80 px-2 py-1 border border-white/10">
-                  {mode === "real" ? "FRAME 024" : "ALTER EGO"}
+                  {mode === "cartoon" ? "TEKKEN 8 · GROK" : "FRAME 024"}
                 </div>
                 <div className="absolute bottom-4 right-4 font-mono-tech text-xs text-accent bg-bg/80 px-2 py-1 border border-accent/30 opacity-0 group-hover:opacity-100 transition-opacity">
                   TAP TO TRANSFORM
