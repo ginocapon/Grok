@@ -120,6 +120,22 @@
       "quote": "THE GEAR ISN'T THE POINT. Knowing exactly what your tools can do helps you push the image further.",
       "empty": "Equipment details will be added as verified."
     },
+    "grok": {
+      "eyebrow": "GROK / FILMMAKER IDENTITY",
+      "headline": "HOW AN IMAGE BECOMES A FILM.",
+      "subheadline": "The creative cycle behind every frame — told in four letters.",
+      "label": "GROK",
+      "g": "Grit",
+      "r": "Rhythm",
+      "o": "Optics",
+      "k": "Kinetics",
+      "descriptions": {
+        "g": "Character, determination, authenticity, ambition.",
+        "r": "Editing, music, storytelling, narrative pace.",
+        "o": "Light, lenses, composition, photography, technology.",
+        "k": "Movement, camera work, motion design, energy."
+      }
+    },
     "philosophy": {
       "items": [
         "GOOD LIGHT MATTERS.",

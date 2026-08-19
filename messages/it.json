@@ -120,6 +120,22 @@
       "quote": "L'ATTREZZATURA NON È IL PUNTO. Sapere esattamente cosa possono fare i tuoi strumenti ti aiuta a spingere l'immagine oltre.",
       "empty": "I dettagli sull'attrezzatura verranno aggiunti quando verificati."
     },
+    "grok": {
+      "eyebrow": "GROK / FILMMAKER IDENTITY",
+      "headline": "COME UN'IMMAGINE DIVENTA UN FILM.",
+      "subheadline": "Il ciclo creativo dietro ogni fotogramma — raccontato in quattro lettere.",
+      "label": "GROK",
+      "g": "Grit",
+      "r": "Rhythm",
+      "o": "Optics",
+      "k": "Kinetics",
+      "descriptions": {
+        "g": "Carattere, determinazione, autenticità, ambizione.",
+        "r": "Montaggio, musica, storytelling, ritmo narrativo.",
+        "o": "Luce, obiettivi, composizione, fotografia, tecnologia.",
+        "k": "Movimento, camera movement, motion design, energia."
+      }
+    },
     "philosophy": {
       "items": [
         "LA BUONA LUCE CONTA.",
