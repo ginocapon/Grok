@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { Button3D } from "@/components/ui/Button3D";
-import { FilmMeta } from "@/components/ui/FilmMeta";
+import { FilmMeta, GrokStrip } from "@/components/ui/FilmMeta";
 import { Reveal } from "@/components/ui/Reveal";
 import { Volume2, VolumeX, Pause, Play } from "lucide-react";
 import { assetPath } from "@/lib/asset-path";
@@ -70,12 +70,22 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-24 pt-32 md:px-12 lg:pb-32">
         <div className="mx-auto w-full max-w-7xl">
           <Reveal delay={200}>
-            <FilmMeta
-              rec={t("rec")}
-              fps={t("fps")}
-              take={t("take")}
-              className="mb-8"
-            />
+            <div className="mb-8 space-y-3">
+              <FilmMeta
+                rec={t("rec")}
+                fps={t("fps")}
+                take={t("take")}
+              />
+              <GrokStrip
+                label={t("grok.label")}
+                words={{
+                  g: t("grok.g"),
+                  r: t("grok.r"),
+                  o: t("grok.o"),
+                  k: t("grok.k"),
+                }}
+              />
+            </div>
           </Reveal>
 
           <Reveal delay={400}>

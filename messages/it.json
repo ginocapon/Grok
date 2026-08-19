@@ -15,7 +15,14 @@
     "rec": "REC",
     "fps": "24 FPS",
     "take": "TAKE 01",
-    "timecode": "00:00:00:00"
+    "timecode": "00:00:00:00",
+    "grok": {
+      "label": "GROK",
+      "g": "Generate",
+      "r": "Refine",
+      "o": "Observe",
+      "k": "Keep Evolving"
+    }
   },
   "intro": {
     "text": "Sono filmmaker, regista e montatore. Il mio obiettivo è trasformare buone idee in immagini che restano.",
