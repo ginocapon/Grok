@@ -47,10 +47,8 @@ export function BlogPageClient({ articles, timeline }: BlogPageClientProps) {
               type="button"
               onClick={() => { setMode(m); setActiveCategory(null); }}
               className={cn(
-                "font-mono-tech text-xs tracking-widest px-6 py-3 min-h-[44px] border rounded-sm transition-colors",
-                mode === m
-                  ? "border-accent text-accent bg-accent/10"
-                  : "border-white/10 text-text-secondary hover:border-white/30"
+                "btn-toggle font-mono-tech tracking-widest",
+                mode === m && "btn-toggle-active"
               )}
             >
               {t(m)}
@@ -66,10 +64,8 @@ export function BlogPageClient({ articles, timeline }: BlogPageClientProps) {
                 type="button"
                 onClick={() => setActiveCategory(cat)}
                 className={cn(
-                  "font-mono-tech text-xs px-3 py-2 min-h-[44px] border rounded-sm transition-colors uppercase",
-                  activeCategory === cat
-                    ? "border-accent text-accent"
-                    : "border-white/10 text-text-secondary hover:border-white/30"
+                  "btn-toggle btn-toggle-sm font-mono-tech",
+                  activeCategory === cat && "btn-toggle-active"
                 )}
               >
                 {cat.replace("-", " ")}

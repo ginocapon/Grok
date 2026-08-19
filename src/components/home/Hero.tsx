@@ -4,7 +4,7 @@ import { useRef, useState } from "react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { Button3D } from "@/components/ui/Button3D";
-import { FilmMeta } from "@/components/ui/FilmMeta";
+import { FilmMeta, GrokStrip } from "@/components/ui/FilmMeta";
 import { Reveal } from "@/components/ui/Reveal";
 import { Volume2, VolumeX, Pause, Play } from "lucide-react";
 import { assetPath } from "@/lib/asset-path";
@@ -70,12 +70,22 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
       <div className="relative z-10 flex h-full flex-col justify-end px-6 pb-24 pt-32 md:px-12 lg:pb-32">
         <div className="mx-auto w-full max-w-7xl">
           <Reveal delay={200}>
-            <FilmMeta
-              rec={t("rec")}
-              fps={t("fps")}
-              take={t("take")}
-              className="mb-8"
-            />
+            <div className="mb-8 space-y-3">
+              <FilmMeta
+                rec={t("rec")}
+                fps={t("fps")}
+                take={t("take")}
+              />
+              <GrokStrip
+                label={t("grok.label")}
+                words={{
+                  g: t("grok.g"),
+                  r: t("grok.r"),
+                  o: t("grok.o"),
+                  k: t("grok.k"),
+                }}
+              />
+            </div>
           </Reveal>
 
           <Reveal delay={400}>
@@ -110,7 +120,7 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
               <button
                 type="button"
                 onClick={togglePlay}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-bg/50 backdrop-blur-sm text-text-primary hover:border-accent transition-colors"
+                className="btn-icon-3d"
                 aria-label={playing ? "Pause" : "Play"}
               >
                 {playing ? <Pause size={16} /> : <Play size={16} />}
@@ -118,7 +128,7 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
               <button
                 type="button"
                 onClick={toggleMute}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-bg/50 backdrop-blur-sm text-text-primary hover:border-accent transition-colors"
+                className="btn-icon-3d"
                 aria-label={muted ? "Unmute" : "Mute"}
               >
                 {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}

@@ -35,10 +35,8 @@ export function ProjectsVisual({ projects }: ProjectsVisualProps) {
             type="button"
             onClick={() => setFilter(cat)}
             className={cn(
-              "font-mono-tech text-xs tracking-widest px-4 py-2 min-h-[44px] border rounded-sm transition-colors",
-              filter === cat
-                ? "border-accent text-accent bg-accent/10"
-                : "border-white/10 text-text-secondary hover:border-white/30"
+              "btn-toggle btn-toggle-sm font-mono-tech tracking-widest",
+              filter === cat && "btn-toggle-active"
             )}
           >
             {t(`filters.${cat}`)}

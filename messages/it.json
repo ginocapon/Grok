@@ -15,7 +15,14 @@
     "rec": "REC",
     "fps": "24 FPS",
     "take": "TAKE 01",
-    "timecode": "00:00:00:00"
+    "timecode": "00:00:00:00",
+    "grok": {
+      "label": "GROK",
+      "g": "Generate",
+      "r": "Refine",
+      "o": "Observe",
+      "k": "Keep Evolving"
+    }
   },
   "intro": {
     "text": "Sono filmmaker, regista e montatore. Il mio obiettivo è trasformare buone idee in immagini che restano.",
@@ -112,6 +119,22 @@
       "headline": "TECNOLOGIA",
       "quote": "L'ATTREZZATURA NON È IL PUNTO. Sapere esattamente cosa possono fare i tuoi strumenti ti aiuta a spingere l'immagine oltre.",
       "empty": "I dettagli sull'attrezzatura verranno aggiunti quando verificati."
+    },
+    "grok": {
+      "eyebrow": "GROK / FILMMAKER IDENTITY",
+      "headline": "COME UN'IMMAGINE DIVENTA UN FILM.",
+      "subheadline": "Il ciclo creativo dietro ogni fotogramma — raccontato in quattro lettere.",
+      "label": "GROK",
+      "g": "Grit",
+      "r": "Rhythm",
+      "o": "Optics",
+      "k": "Kinetics",
+      "descriptions": {
+        "g": "Carattere, determinazione, autenticità, ambizione.",
+        "r": "Montaggio, musica, storytelling, ritmo narrativo.",
+        "o": "Luce, obiettivi, composizione, fotografia, tecnologia.",
+        "k": "Movimento, camera movement, motion design, energia."
+      }
     },
     "philosophy": {
       "items": [

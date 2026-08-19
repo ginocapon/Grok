@@ -15,7 +15,14 @@
     "rec": "REC",
     "fps": "24 FPS",
     "take": "TAKE 01",
-    "timecode": "00:00:00:00"
+    "timecode": "00:00:00:00",
+    "grok": {
+      "label": "GROK",
+      "g": "Generate",
+      "r": "Refine",
+      "o": "Observe",
+      "k": "Keep Evolving"
+    }
   },
   "intro": {
     "text": "I'm a filmmaker, director and editor obsessed with turning good ideas into images people remember.",
@@ -112,6 +119,22 @@
       "headline": "TECHNOLOGY",
       "quote": "THE GEAR ISN'T THE POINT. Knowing exactly what your tools can do helps you push the image further.",
       "empty": "Equipment details will be added as verified."
+    },
+    "grok": {
+      "eyebrow": "GROK / FILMMAKER IDENTITY",
+      "headline": "HOW AN IMAGE BECOMES A FILM.",
+      "subheadline": "The creative cycle behind every frame — told in four letters.",
+      "label": "GROK",
+      "g": "Grit",
+      "r": "Rhythm",
+      "o": "Optics",
+      "k": "Kinetics",
+      "descriptions": {
+        "g": "Character, determination, authenticity, ambition.",
+        "r": "Editing, music, storytelling, narrative pace.",
+        "o": "Light, lenses, composition, photography, technology.",
+        "k": "Movement, camera work, motion design, energy."
+      }
     },
     "philosophy": {
       "items": [

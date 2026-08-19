@@ -61,3 +61,47 @@ export function FilmMeta({ className, rec = "REC", fps = "24 FPS", take = "TAKE 
     </div>
   );
 }
+
+const GROK_KEYS = ["g", "r", "o", "k"] as const;
+
+interface GrokStripProps {
+  className?: string;
+  label?: string;
+  words: Record<(typeof GROK_KEYS)[number], string>;
+}
+
+export function GrokStrip({ className, label = "GROK", words }: GrokStripProps) {
+  const [active, setActive] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => setActive((i) => (i + 1) % GROK_KEYS.length), 2200);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <div
+      className={cn("flex flex-wrap items-center gap-x-3 gap-y-1 font-mono-tech text-xs", className)}
+      aria-label={`${label} — ${words.g}, ${words.r}, ${words.o}, ${words.k}`}
+    >
+      <span className="text-text-secondary">{label}</span>
+      <span className="flex items-center gap-2">
+        {GROK_KEYS.map((key, index) => (
+          <span key={key} className="flex items-center gap-2">
+            {index > 0 && <span className="text-text-secondary/40">→</span>}
+            <span
+              className={cn(
+                "font-bold tracking-widest transition-colors duration-300",
+                active === index ? "text-accent" : "text-text-secondary"
+              )}
+            >
+              {key.toUpperCase()}
+            </span>
+          </span>
+        ))}
+      </span>
+      <span className="text-text-secondary/80 hidden sm:inline tabular-nums">
+        — {words[GROK_KEYS[active]]}
+      </span>
+    </div>
+  );
+}

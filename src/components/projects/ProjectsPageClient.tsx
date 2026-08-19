@@ -31,10 +31,8 @@ export function ProjectsPageClient({ projects, timeline }: ProjectsPageClientPro
               type="button"
               onClick={() => setMode(m)}
               className={cn(
-                "font-mono-tech text-xs tracking-widest px-6 py-3 min-h-[44px] border rounded-sm transition-colors",
-                mode === m
-                  ? "border-accent text-accent bg-accent/10"
-                  : "border-white/10 text-text-secondary hover:border-white/30"
+                "btn-toggle font-mono-tech tracking-widest",
+                mode === m && "btn-toggle-active"
               )}
             >
               {t(m)}

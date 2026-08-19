@@ -4,11 +4,14 @@ import { useState } from "react";
 import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { ScrollReveal } from "@/components/ui/Reveal";
+import { GrokStrip } from "@/components/ui/FilmMeta";
 import { cn } from "@/lib/utils";
 
 const PERSONALITY_KEYS = [
   "precise", "direct", "creative", "reliable", "curious", "humble", "fun",
 ] as const;
+
+const GROK_KEYS = ["g", "r", "o", "k"] as const;
 
 export function AboutPageClient() {
   const t = useTranslations("about");
@@ -124,6 +127,46 @@ export function AboutPageClient() {
               {transformStage === 0 ? "CLICK TO TRANSFORM" : stages[transformStage] ?? ""}
             </p>
           </ScrollReveal>
+        </div>
+      </section>
+
+      {/* GROK Filmmaker Identity */}
+      <section className="px-6 md:px-12 py-16 md:py-24 bg-surface/30">
+        <div className="mx-auto max-w-7xl">
+          <ScrollReveal>
+            <span className="font-mono-tech text-xs text-accent">{t("grok.eyebrow")}</span>
+            <h2 className="mt-6 font-display text-3xl md:text-5xl font-bold tracking-tight max-w-3xl">
+              {t("grok.headline")}
+            </h2>
+            <p className="mt-4 max-w-2xl text-lg text-text-secondary">{t("grok.subheadline")}</p>
+            <GrokStrip
+              className="mt-8"
+              label={t("grok.label")}
+              words={{
+                g: t("grok.g"),
+                r: t("grok.r"),
+                o: t("grok.o"),
+                k: t("grok.k"),
+              }}
+            />
+          </ScrollReveal>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {GROK_KEYS.map((key) => (
+              <ScrollReveal key={key}>
+                <div className="h-full p-6 border border-white/8 rounded-sm bg-surface/60 hover:border-accent/30 transition-colors">
+                  <span className="font-mono-tech text-xs text-accent">
+                    {String(GROK_KEYS.indexOf(key) + 1).padStart(2, "0")}
+                  </span>
+                  <p className="mt-3 font-display text-4xl font-bold text-text-primary">{key.toUpperCase()}</p>
+                  <p className="mt-1 font-mono-tech text-sm tracking-widest text-accent">{t(`grok.${key}`)}</p>
+                  <p className="mt-4 text-sm text-text-secondary leading-relaxed">
+                    {t(`grok.descriptions.${key}`)}
+                  </p>
+                </div>
+              </ScrollReveal>
+            ))}
+          </div>
         </div>
       </section>
 
