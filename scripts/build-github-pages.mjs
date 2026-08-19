@@ -1,6 +1,6 @@
 /**
  * Build statico per GitHub Pages (come linda-allenamenti).
- * Disabilita temporaneamente API, admin e middleware (non supportati in export).
+ * Disabilita API e middleware (non supportati in export). Admin resta attivo (usa GitHub API).
  */
 import { execSync } from "child_process";
 import fs from "fs";
@@ -10,7 +10,6 @@ const root = process.cwd();
 
 const moves = [
   { from: "src/app/api", to: "src/app/_api.disabled", isDir: true },
-  { from: "src/app/admin", to: "src/app/_admin.disabled", isDir: true },
   { from: "src/middleware.ts", to: "src/middleware.ts.disabled", isDir: false },
 ];
 
@@ -51,6 +50,7 @@ const disabled = moves.map((m) => ({ ...m, ok: disable(m) }));
 
 try {
   const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Grok";
+  const repoSlug = process.env.GITHUB_REPOSITORY ?? `ginocapon/${repoName}`;
   console.log(`Building for GitHub Pages — basePath: /${repoName}`);
 
   if (fs.existsSync(path.join(root, ".next"))) {
@@ -64,6 +64,8 @@ try {
       GITHUB_PAGES: "true",
       NEXT_PUBLIC_GITHUB_PAGES: "true",
       NEXT_PUBLIC_BASE_PATH: `/${repoName}`,
+      NEXT_PUBLIC_GITHUB_REPO: repoSlug,
+      NEXT_PUBLIC_GITHUB_BRANCH: "main",
       GITHUB_REPOSITORY_NAME: repoName,
       NEXT_PUBLIC_SITE_URL: `https://ginocapon.github.io/${repoName}`,
       NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@grok.film",

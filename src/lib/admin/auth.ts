@@ -11,13 +11,6 @@ export function adminUnauthorized() {
   return Response.json({ error: "Unauthorized" }, { status: 401 });
 }
 
-export function slugify(text: string): string {
-  return text
-    .toLowerCase()
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)/g, "");
-}
+export { slugify } from "@/lib/admin/slugify";
 
 export { isYouTubeUrl, toYouTubeEmbed } from "@/lib/video";

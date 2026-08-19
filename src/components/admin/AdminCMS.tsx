@@ -1,45 +1,60 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
-import Image from "next/image";
 import type { Project, BlogArticle, ProjectCategory, BlogCategory } from "@/types";
 import { cn } from "@/lib/utils";
+import { SiteImage } from "@/components/ui/SiteImage";
+import { isPagesAdmin } from "@/lib/admin/github-storage";
+import {
+  AdminAuthError,
+  adminLoadProjects,
+  adminLoadArticles,
+  adminSaveProject,
+  adminDeleteProject,
+  adminSaveArticle,
+  adminDeleteArticle,
+  adminUploadFile,
+  adminLoginLocal,
+  adminLogoutLocal,
+  clearAdminSession,
+  startPagesAdminSession,
+} from "@/lib/admin/admin-client";
 import { Upload, Trash2, Save, Plus, LogOut, Film, FileText, ImageIcon } from "lucide-react";
 
 type Tab = "projects" | "blog" | "media";
 
-async function adminFetch(url: string, options: RequestInit = {}) {
-  return fetch(url, {
-    ...options,
-    credentials: "include",
-    headers: {
-      ...(options.body instanceof FormData ? {} : { "Content-Type": "application/json" }),
-      ...options.headers,
-    },
-  });
-}
-
 function LoginGate({ onLogin }: { onLogin: () => void }) {
   const [password, setPassword] = useState("");
+  const [githubToken, setGithubToken] = useState("");
   const [error, setError] = useState("");
+  const pagesMode = isPagesAdmin();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("/api/admin/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-      credentials: "include",
-    });
-    if (res.ok) onLogin();
+    setError("");
+
+    if (pagesMode) {
+      if (startPagesAdminSession(password, githubToken)) {
+        onLogin();
+      } else {
+        setError("Password o token GitHub non validi");
+      }
+      return;
+    }
+
+    if (await adminLoginLocal(password)) onLogin();
     else setError("Password non valida");
   };
 
   return (
     <div className="min-h-screen bg-bg flex items-center justify-center px-6">
-      <form onSubmit={handleLogin} className="w-full max-w-sm p-8 border border-white/10 rounded-sm bg-surface">
+      <form onSubmit={handleLogin} className="w-full max-w-md p-8 border border-white/10 rounded-sm bg-surface">
         <h1 className="font-display text-2xl font-bold mb-2">GROK Admin</h1>
-        <p className="text-sm text-text-secondary mb-6">Inserisci la password per gestire contenuti</p>
+        <p className="text-sm text-text-secondary mb-6">
+          {pagesMode
+            ? "Accedi per modificare contenuti e salvare su GitHub"
+            : "Inserisci la password per gestire contenuti"}
+        </p>
         <input
           type="password"
           value={password}
@@ -47,9 +62,26 @@ function LoginGate({ onLogin }: { onLogin: () => void }) {
           placeholder="Password admin"
           className="w-full bg-bg border border-white/10 rounded-sm px-4 py-3 text-sm mb-4 focus:border-accent focus:outline-none"
         />
+        {pagesMode && (
+          <>
+            <input
+              type="password"
+              value={githubToken}
+              onChange={(e) => setGithubToken(e.target.value)}
+              placeholder="GitHub Personal Access Token"
+              className="w-full bg-bg border border-white/10 rounded-sm px-4 py-3 text-sm mb-4 focus:border-accent focus:outline-none"
+            />
+            <p className="font-mono-tech text-xs text-text-secondary mb-4 leading-relaxed">
+              Crea un token gratis su GitHub → Settings → Developer settings → Personal access tokens.
+              Serve permesso <strong className="text-text-primary">repo</strong> (o Contents: read/write sul repo Grok).
+            </p>
+          </>
+        )}
         {error && <p className="text-sm text-accent mb-4">{error}</p>}
         <button type="submit" className="btn-3d btn-3d-primary w-full">ACCEDI</button>
-        <p className="mt-4 font-mono-tech text-xs text-text-secondary">Default locale: grok-admin</p>
+        {!pagesMode && (
+          <p className="mt-4 font-mono-tech text-xs text-text-secondary">Default locale: grok-admin</p>
+        )}
       </form>
     </div>
   );
@@ -70,13 +102,11 @@ function MediaUpload({
     const file = e.target.files?.[0];
     if (!file) return;
     setUploading(true);
-    const fd = new FormData();
-    fd.append("file", file);
-    fd.append("folder", folder);
-    const res = await adminFetch("/api/admin/upload", { method: "POST", body: fd });
-    if (res.ok) {
-      const data = await res.json();
-      onUploaded(data.url);
+    try {
+      const url = await adminUploadFile(folder, file);
+      onUploaded(url);
+    } catch {
+      alert("Upload fallito. Verifica token GitHub e permessi repo.");
     }
     setUploading(false);
     e.target.value = "";
@@ -151,7 +181,7 @@ function ProjectEditor({
         </div>
         {form.heroImage && (
           <div className="relative h-32 w-full mt-2 rounded-sm overflow-hidden">
-            <Image src={form.heroImage} alt="" fill className="object-cover" />
+            <SiteImage src={form.heroImage} alt="" fill className="object-cover" />
           </div>
         )}
       </div>
@@ -303,17 +333,21 @@ export function AdminCMS() {
   const [editingArticle, setEditingArticle] = useState<(Partial<BlogArticle> & { id?: string }) | null>(null);
 
   const load = useCallback(async () => {
-    const [pRes, aRes] = await Promise.all([
-      adminFetch("/api/admin/projects"),
-      adminFetch("/api/admin/blog"),
-    ]);
-    if (pRes.status === 401 || aRes.status === 401) {
+    try {
+      const [projectsData, articlesData] = await Promise.all([
+        adminLoadProjects(),
+        adminLoadArticles(),
+      ]);
+      setProjects(projectsData);
+      setArticles(articlesData);
+      setAuthed(true);
+    } catch (err) {
+      if (err instanceof AdminAuthError) {
+        setAuthed(false);
+        return;
+      }
       setAuthed(false);
-      return;
     }
-    if (pRes.ok) setProjects(await pRes.json());
-    if (aRes.ok) setArticles(await aRes.json());
-    setAuthed(true);
   }, []);
 
   useEffect(() => {
@@ -321,7 +355,11 @@ export function AdminCMS() {
   }, [load]);
 
   const logout = async () => {
-    await adminFetch("/api/admin/auth", { method: "DELETE" });
+    if (isPagesAdmin()) {
+      clearAdminSession();
+    } else {
+      await adminLogoutLocal();
+    }
     setAuthed(false);
   };
 
@@ -332,37 +370,53 @@ export function AdminCMS() {
   if (!authed) return <LoginGate onLogin={load} />;
 
   const saveProject = async (form: Partial<Project>) => {
-    if (form.id) {
-      await adminFetch(`/api/admin/projects/${form.id}`, { method: "PUT", body: JSON.stringify(form) });
-    } else {
-      await adminFetch("/api/admin/projects", { method: "POST", body: JSON.stringify(form) });
+    try {
+      await adminSaveProject(form);
+      if (isPagesAdmin()) {
+        alert("Salvato su GitHub. Il sito si aggiorna in circa 1 minuto.");
+      }
+      setEditingProject(null);
+      load();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Salvataggio fallito");
     }
-    setEditingProject(null);
-    load();
   };
 
   const deleteProject = async (id: string) => {
     if (!confirm("Eliminare questo progetto?")) return;
-    await adminFetch(`/api/admin/projects/${id}`, { method: "DELETE" });
-    setEditingProject(null);
-    load();
+    try {
+      await adminDeleteProject(id);
+      if (isPagesAdmin()) alert("Eliminato. Deploy in corso...");
+      setEditingProject(null);
+      load();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Eliminazione fallita");
+    }
   };
 
   const saveArticle = async (form: Partial<BlogArticle>) => {
-    if (form.id) {
-      await adminFetch(`/api/admin/blog/${form.id}`, { method: "PUT", body: JSON.stringify(form) });
-    } else {
-      await adminFetch("/api/admin/blog", { method: "POST", body: JSON.stringify(form) });
+    try {
+      await adminSaveArticle(form);
+      if (isPagesAdmin()) {
+        alert("Salvato su GitHub. Il sito si aggiorna in circa 1 minuto.");
+      }
+      setEditingArticle(null);
+      load();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Salvataggio fallito");
     }
-    setEditingArticle(null);
-    load();
   };
 
   const deleteArticle = async (id: string) => {
     if (!confirm("Eliminare questo articolo?")) return;
-    await adminFetch(`/api/admin/blog/${id}`, { method: "DELETE" });
-    setEditingArticle(null);
-    load();
+    try {
+      await adminDeleteArticle(id);
+      if (isPagesAdmin()) alert("Eliminato. Deploy in corso...");
+      setEditingArticle(null);
+      load();
+    } catch (err) {
+      alert(err instanceof Error ? err.message : "Eliminazione fallita");
+    }
   };
 
   return (
@@ -370,7 +424,10 @@ export function AdminCMS() {
       <header className="border-b border-white/10 bg-surface px-6 py-4 flex items-center justify-between">
         <div>
           <h1 className="font-display text-2xl font-bold">GROK <span className="text-accent">Admin</span></h1>
-          <p className="font-mono-tech text-xs text-text-secondary mt-1">Gestisci progetti, articoli e media</p>
+          <p className="font-mono-tech text-sm text-text-secondary">Gestisci progetti, articoli e media</p>
+          {isPagesAdmin() && (
+            <p className="font-mono-tech text-xs text-accent mt-1">Modalità GitHub Pages — salvataggio diretto su repo</p>
+          )}
         </div>
         <button type="button" onClick={logout} className="btn-3d btn-3d-ghost flex items-center gap-2 text-xs">
           <LogOut size={14} /> ESCI
@@ -422,7 +479,7 @@ export function AdminCMS() {
                   <div key={p.id} className="flex items-center gap-4 p-4 border border-white/10 rounded-sm bg-surface hover:border-accent/30 transition-colors">
                     {p.heroImage && (
                       <div className="relative h-16 w-24 flex-shrink-0 rounded-sm overflow-hidden">
-                        <Image src={p.heroImage} alt="" fill className="object-cover" />
+                        <SiteImage src={p.heroImage} alt="" fill className="object-cover" />
                       </div>
                     )}
                     <div className="flex-1">
@@ -461,7 +518,7 @@ export function AdminCMS() {
                   <div key={a.id} className="flex items-center gap-4 p-4 border border-white/10 rounded-sm bg-surface">
                     {a.featuredImage && (
                       <div className="relative h-16 w-24 flex-shrink-0 rounded-sm overflow-hidden">
-                        <Image src={a.featuredImage} alt="" fill className="object-cover" />
+                        <SiteImage src={a.featuredImage} alt="" fill className="object-cover" />
                       </div>
                     )}
                     <div className="flex-1">
