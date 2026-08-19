@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { getTranslations, setRequestLocale, getLocale } from "next-intl/server";
 import { getProjectBySlug, getPublishedProjects, getProjects } from "@/lib/cms";
 import { getLocalized } from "@/lib/i18n-content";
@@ -58,7 +58,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
     <article className="pt-32 pb-24">
       <div className="relative h-[60vh] min-h-[400px] w-full">
         {project.heroImage ? (
-          <Image
+          <SiteImage
             src={project.heroImage}
             alt={getLocalized(project.title, loc)}
             fill
@@ -126,7 +126,7 @@ export default async function ProjectCaseStudyPage({ params }: Props) {
             <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {project.gallery.map((img, i) => (
                 <div key={i} className="relative aspect-[4/3] overflow-hidden rounded-sm">
-                  <Image src={img} alt="" fill className="object-cover" sizes="33vw" />
+                  <SiteImage src={img} alt="" fill className="object-cover" sizes="33vw" />
                 </div>
               ))}
             </div>

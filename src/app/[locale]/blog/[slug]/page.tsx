@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { getTranslations, setRequestLocale, getLocale } from "next-intl/server";
 import { getArticleBySlug, getPublishedArticles, getBlogArticles } from "@/lib/cms";
 import { getLocalized } from "@/lib/i18n-content";
@@ -67,7 +67,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
         {article.featuredImage && (
           <div className="relative aspect-[16/9] mt-12 overflow-hidden rounded-sm border border-white/10">
-            <Image
+            <SiteImage
               src={article.featuredImage}
               alt={getLocalized(article.title, loc)}
               fill
@@ -84,7 +84,7 @@ export default async function BlogArticlePage({ params }: Props) {
 
         {article.cartoonImage && (
           <div className="relative aspect-[16/9] mt-12 overflow-hidden rounded-sm border border-accent/20">
-            <Image
+            <SiteImage
               src={article.cartoonImage}
               alt={`${getLocalized(article.title, loc)} — cartoon alter ego (AI-generated)`}
               fill

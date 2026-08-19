@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { ScrollReveal } from "@/components/ui/Reveal";
 import { cn } from "@/lib/utils";
@@ -103,7 +103,7 @@ export function AboutPageClient() {
               className="relative mx-auto block w-64 h-80 overflow-hidden rounded-sm border border-white/10 cursor-pointer group"
               aria-label="Identity transformation"
             >
-              <Image
+              <SiteImage
                 src="/images/grok-portrait.png"
                 alt="Grok"
                 fill

@@ -1,12 +1,13 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { Button3D } from "@/components/ui/Button3D";
 import { FilmMeta } from "@/components/ui/FilmMeta";
 import { Reveal } from "@/components/ui/Reveal";
 import { Volume2, VolumeX, Pause, Play } from "lucide-react";
+import { assetPath } from "@/lib/asset-path";
 
 interface HeroProps {
   posterUrl: string | null;
@@ -45,13 +46,13 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
             muted
             playsInline
             loop
-            poster={posterUrl ?? undefined}
+            poster={posterUrl ? assetPath(posterUrl) : undefined}
             className="h-full w-full object-cover"
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
         ) : posterUrl ? (
-          <Image
+          <SiteImage
             src={posterUrl}
             alt="Grok — Filmmaker"
             fill

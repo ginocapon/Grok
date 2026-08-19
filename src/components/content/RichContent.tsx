@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 
 function renderBlock(text: string, keyPrefix: string) {
   const lines = text.split("\n");
@@ -19,7 +19,7 @@ function renderBlock(text: string, keyPrefix: string) {
       elements.push(
         <figure key={key} className="my-8">
           <div className="relative aspect-[16/10] w-full overflow-hidden rounded-sm border border-white/10">
-            <Image src={src} alt={alt || ""} fill className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
+            <SiteImage src={src} alt={alt || ""} fill className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
           </div>
           {alt && (
             <figcaption className="mt-2 font-mono-tech text-xs text-text-secondary">{alt}</figcaption>

@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 import type { Project } from "@/types";
@@ -38,7 +38,7 @@ function ProjectCard({ project, className, index }: { project: Project; classNam
     >
       <div className="absolute inset-0">
         {project.heroImage ? (
-          <Image
+          <SiteImage
             src={project.heroImage}
             alt={getLocalized(project.title, locale)}
             fill

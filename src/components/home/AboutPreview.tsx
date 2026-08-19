@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { ScrollReveal } from "@/components/ui/Reveal";
@@ -25,14 +25,14 @@ export function AboutPreview() {
                 className="relative h-full w-full overflow-hidden rounded-sm cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                 aria-label={mode === "real" ? "Switch to cartoon alter ego" : "Switch to real photo"}
               >
-                <Image
+                <SiteImage
                   src={mode === "real" ? "/images/grok-portrait.png" : "/uploads/characters/grok-tekken.png"}
                   alt={mode === "real" ? "Grok — Filmmaker portrait" : "Grok — Cartoon alter ego (AI-generated)"}
                   fill
                   className={cn(
                     "object-cover transition-all duration-700",
-                    mode === "real" ? "object-top" : "object-center scale-105",
-                    mode === "cartoon" && "saturate-110"
+                    mode === "real" ? "object-top" : "object-center",
+                    mode === "cartoon" && "object-contain bg-black"
                   )}
                   sizes="(max-width: 768px) 100vw, 400px"
                 />

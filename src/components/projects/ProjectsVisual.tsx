@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Link } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalized } from "@/lib/i18n-content";
@@ -60,7 +60,7 @@ export function ProjectsVisual({ projects }: ProjectsVisualProps) {
               >
                 <div className="relative aspect-[16/10] overflow-hidden">
                   {project.heroImage ? (
-                    <Image
+                    <SiteImage
                       src={project.heroImage}
                       alt={getLocalized(project.title, locale)}
                       fill

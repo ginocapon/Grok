@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Link } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalized } from "@/lib/i18n-content";
@@ -55,7 +55,7 @@ export function FeaturedBlog({ articles }: FeaturedBlogProps) {
               >
                 <div className={cn("relative overflow-hidden", i === 0 ? "aspect-[16/9]" : "aspect-[16/10]")}>
                   {article.featuredImage ? (
-                    <Image
+                    <SiteImage
                       src={article.featuredImage}
                       alt={getLocalized(article.title, locale)}
                       fill

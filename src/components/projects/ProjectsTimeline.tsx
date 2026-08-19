@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Link } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalized } from "@/lib/i18n-content";
@@ -62,7 +62,7 @@ export function ProjectsTimeline({ timeline }: ProjectsTimelineProps) {
                   >
                     <div className="relative h-20 w-32 flex-shrink-0 overflow-hidden rounded-sm bg-surface-2">
                       {project.heroImage && (
-                        <Image
+                        <SiteImage
                           src={project.heroImage}
                           alt={getLocalized(project.title, locale)}
                           fill

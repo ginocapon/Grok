@@ -53,12 +53,17 @@ try {
   const repoName = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "Grok";
   console.log(`Building for GitHub Pages — basePath: /${repoName}`);
 
+  if (fs.existsSync(path.join(root, ".next"))) {
+    fs.rmSync(path.join(root, ".next"), { recursive: true, force: true });
+  }
+
   execSync("npm run build", {
     stdio: "inherit",
     env: {
       ...process.env,
       GITHUB_PAGES: "true",
       NEXT_PUBLIC_GITHUB_PAGES: "true",
+      NEXT_PUBLIC_BASE_PATH: `/${repoName}`,
       GITHUB_REPOSITORY_NAME: repoName,
       NEXT_PUBLIC_SITE_URL: `https://ginocapon.github.io/${repoName}`,
       NEXT_PUBLIC_CONTACT_EMAIL: process.env.NEXT_PUBLIC_CONTACT_EMAIL ?? "hello@grok.film",

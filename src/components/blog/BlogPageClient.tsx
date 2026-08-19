@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
+import { SiteImage } from "@/components/ui/SiteImage";
 import { Link } from "@/i18n/navigation";
 import { useLocale, useTranslations } from "next-intl";
 import { getLocalized } from "@/lib/i18n-content";
@@ -133,7 +133,7 @@ function ArticleCard({
     >
       <div className="relative aspect-[16/10] overflow-hidden">
         {article.featuredImage ? (
-          <Image
+          <SiteImage
             src={article.featuredImage}
             alt={getLocalized(article.title, locale)}
             fill
