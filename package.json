@@ -1,0 +1,39 @@
+{
+  "name": "grok",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "cert": "node scripts/generate-cert.js",
+    "dev": "node scripts/generate-cert.js && next dev --experimental-https --experimental-https-key certificates/localhost-key.pem --experimental-https-cert certificates/localhost.pem",
+    "dev:http": "next dev",
+    "build": "next build",
+    "build:pages": "node scripts/build-github-pages.mjs",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.112.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^13.1.0",
+    "gsap": "^3.15.0",
+    "lucide-react": "^1.32.0",
+    "next": "16.3.1",
+    "next-intl": "^4.13.7",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.6.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "concurrently": "^10.0.5",
+    "eslint": "^9",
+    "eslint-config-next": "16.3.1",
+    "selfsigned": "^5.5.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  }
+}

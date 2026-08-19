@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "videoUrl": null,
+    "posterUrl": "/images/grok-portrait.png",
+    "headline": {
+      "en": "I MAKE MOVING IMAGES.",
+      "it": "CREO IMMAGINI CHE SI MUOVONO."
+    },
+    "subheadline": {
+      "en": "22. Camera in hand. Always looking for the next shot.",
+      "it": "22 anni. Camera in mano. Sempre alla ricerca del prossimo scatto."
+    },
+    "ctaPrimary": { "en": "WATCH REEL", "it": "GUARDA REEL" },
+    "ctaSecondary": { "en": "VIEW PROJECTS", "it": "VEDI PROGETTI" }
+  },
+  "intro": {
+    "en": "I'm a filmmaker, director and editor obsessed with turning good ideas into images people remember.",
+    "it": "Sono filmmaker, regista e montatore. Il mio obiettivo è trasformare buone idee in immagini che restano."
+  },
+  "aboutPreview": {
+    "en": "22. Filmmaker. Editor. Creative mind. Professional when it matters. Probably laughing when it doesn't.",
+    "it": "22. Filmmaker. Montatore. Mente creativa. Professionale quando serve. Probabilmente sto ridendo quando non serve."
+  },
+  "contactHeadline": {
+    "en": "LET'S MAKE SOMETHING WORTH WATCHING.",
+    "it": "FACCIAMO QUALCOSA CHE VALGA LA PENA GUARDARE."
+  },
+  "contactSubheadline": {
+    "en": "Have an idea? A project? A weird concept that somehow needs to become a film?",
+    "it": "Hai un'idea? Un progetto? Un concept strano che in qualche modo deve diventare un film?"
+  },
+  "footer": {
+    "name": "Grok",
+    "role": {
+      "en": "Filmmaker · Director · Editor",
+      "it": "Filmmaker · Regista · Montatore"
+    },
+    "email": "hello@grok.film",
+    "location": null,
+    "social": []
+  }
+}

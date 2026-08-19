@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "scanIntervalDays": 15,
+  "lastScan": null,
+  "nextScan": null,
+  "enabledCommands": [
+    "GROK",
+    "GROK SCAN",
+    "GROK IDEAS",
+    "GROK MOTION",
+    "GROK DESIGN",
+    "GROK VIDEO",
+    "GROK SEO",
+    "GROK AI",
+    "GROK AUDIT",
+    "GROK EVOLVE"
+  ],
+  "scoringWeights": {
+    "creativeValue": 1.0,
+    "brandFit": 1.2,
+    "uxValue": 1.0,
+    "technicalFeasibility": 0.8,
+    "performanceCost": -0.9,
+    "accessibilityRisk": -1.0,
+    "seoRisk": -0.7,
+    "maintenanceCost": -0.6
+  },
+  "autoApproveLevel": 1,
+  "requireApprovalLevels": [2, 3],
+  "artistGuardrails": [
+    "charisma", "humor", "precision", "sophistication",
+    "lightness", "uniqueness", "creativity", "reliability",
+    "maturity", "honesty", "directness", "magnetism",
+    "ambition", "humility"
+  ]
+}

@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "HOME",
+    "projects": "PROGETTI",
+    "blog": "BLOG",
+    "about": "ABOUT",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "headline": "CREO IMMAGINI CHE SI MUOVONO.",
+    "subheadline": "22 anni. Camera in mano. Sempre alla ricerca del prossimo scatto.",
+    "ctaPrimary": "GUARDA REEL",
+    "ctaSecondary": "VEDI PROGETTI",
+    "ctaTalk": "PARLIAMO",
+    "rec": "REC",
+    "fps": "24 FPS",
+    "take": "TAKE 01",
+    "timecode": "00:00:00:00"
+  },
+  "intro": {
+    "text": "Sono filmmaker, regista e montatore. Il mio obiettivo è trasformare buone idee in immagini che restano.",
+    "cta": "SCOPRI DI PIÙ"
+  },
+  "projects": {
+    "title": "LAVORI SELEZIONATI",
+    "viewAll": "TUTTI I PROGETTI",
+    "empty": "I progetti appariranno qui una volta pubblicati nel CMS.",
+    "filters": {
+      "all": "TUTTI",
+      "commercial": "COMMERCIAL",
+      "brand-film": "BRAND FILM",
+      "fashion": "FASHION",
+      "music": "MUSICA",
+      "social": "SOCIAL",
+      "events": "EVENTI",
+      "short-film": "CORTOMETRAGGIO",
+      "experimental": "SPERIMENTALE"
+    },
+    "visual": "VISUAL",
+    "timeline": "TIMELINE",
+    "client": "CLIENTE",
+    "year": "ANNO",
+    "category": "CATEGORIA",
+    "role": "RUOLO"
+  },
+  "caseStudy": {
+    "idea": "L'IDEA",
+    "production": "LA PRODUZIONE",
+    "shoot": "LE RIPRESE",
+    "edit": "IL MONTAGGIO",
+    "bts": "BACKSTAGE",
+    "finalFilm": "FILM FINALE",
+    "related": "PROGETTI CORRELATI",
+    "contactCta": "FACCIAMO QUALCOSA CHE VALGA LA PENA GUARDARE"
+  },
+  "aboutPreview": {
+    "line1": "22.",
+    "line2": "Filmmaker.",
+    "line3": "Montatore.",
+    "line4": "Mente creativa.",
+    "line5": "Professionale quando serve.",
+    "line6": "Probabilmente sto ridendo quando non serve.",
+    "cta": "SCOPRI DI PIÙ"
+  },
+  "blog": {
+    "title": "DAL MONITOR DI MONTAGGIO",
+    "viewAll": "TUTTI GLI ARTICOLI",
+    "empty": "Gli articoli appariranno qui una volta pubblicati.",
+    "latest": "RECENTI",
+    "categories": "CATEGORIE",
+    "archive": "ARCHIVIO",
+    "readingTime": "min di lettura",
+    "updated": "Aggiornato"
+  },
+  "contact": {
+    "headline": "FACCIAMO QUALCOSA CHE VALGA LA PENA GUARDARE.",
+    "subheadline": "Hai un'idea? Un progetto? Un concept strano che in qualche modo deve diventare un film?",
+    "name": "NOME",
+    "email": "EMAIL",
+    "company": "AZIENDA",
+    "projectType": "TIPO DI PROGETTO",
+    "budget": "BUDGET",
+    "timeline": "TIMELINE",
+    "message": "MESSAGGIO",
+    "gdpr": "Acconsento al trattamento dei miei dati personali secondo l'informativa privacy.",
+    "submit": "INVIA MESSAGGIO",
+    "sending": "INVIO IN CORSO...",
+    "success": "Messaggio ricevuto. Ora devo solo farlo venire bene.",
+    "error": "Qualcosa è andato storto. Riprova o scrivimi via email."
+  },
+  "about": {
+    "opening": "Quattro anni fa ho preso in mano una camera. In qualche modo, è diventata parte di me.",
+    "openingAlt": "Ho 22 anni. Faccio film da quattro anni. Quello che era una passione è diventato un lavoro. Poi il lavoro è diventato qualcosa di molto più grande. Ora non riesco a immaginarmi a fare altro.",
+    "passion": {
+      "headline": "LO SENTO NEL SANGUE.",
+      "text": "Alcune persone hanno un hobby. Per me è diventato qualcos'altro. Noto la luce prima della stanza. Sento i tagli nella musica. Penso a fotogrammi. A un certo punto il filmmaking ha smesso di essere qualcosa che faccio. È diventato parte del modo in cui vedo."
+    },
+    "whyFilm": {
+      "headline": "PERCHÉ IL VIDEO?",
+      "text": "Il video mi permette di unire tutto ciò che amo in qualcosa che le persone possono sentire davvero."
+    },
+    "evolution": {
+      "headline": "IL PERCORSO FIN QUI",
+      "years": "4 ANNI",
+      "freelance": "FREELANCE",
+      "moreProductions": "PIÙ PRODUZIONI",
+      "moreExperience": "PIÙ ESPERIENZA",
+      "fullTime": "FILMMAKER A TEMPO PIENO",
+      "biggerAmbitions": "AMBIZIONI PIÙ GRANDI"
+    },
+    "technology": {
+      "headline": "TECNOLOGIA",
+      "quote": "L'ATTREZZATURA NON È IL PUNTO. Sapere esattamente cosa possono fare i tuoi strumenti ti aiuta a spingere l'immagine oltre.",
+      "empty": "I dettagli sull'attrezzatura verranno aggiunti quando verificati."
+    },
+    "philosophy": {
+      "items": [
+        "LA BUONA LUCE CONTA.",
+        "LE BUONE IDEE CONTANO DI PIÙ.",
+        "LA TECNOLOGIA DEVE SERVIRE LA STORIA.",
+        "I DETTAGLI CAMBIANO TUTTO.",
+        "SEMPLICE PUÒ ESSERE PIÙ DIFFICILE DEL COMPLESSO.",
+        "UN BUON FOTOGRAMMA È SOLO L'INIZIO.",
+        "IL MONTAGGIO È DOVE LA STORIA TROVA IL SUO RITMO."
+      ]
+    },
+    "personality": {
+      "precise": { "title": "PRECISO.", "desc": "Perché i dettagli contano." },
+      "direct": { "title": "DIRETTO.", "desc": "Meno chiacchiere. Più riprese." },
+      "creative": { "title": "CREATIVO.", "desc": "C'è sempre un altro modo di vederla." },
+      "reliable": { "title": "AFFIDABILE.", "desc": "La deadline è la deadline." },
+      "curious": { "title": "CURIOSO.", "desc": "La prossima tecnica vale sempre la pena impararla." },
+      "humble": { "title": "UMILE.", "desc": "C'è sempre qualcosa di meglio da imparare." },
+      "fun": { "title": "DIVERTENTE.", "desc": "Una giornata di produzione da 12 ore ha bisogno di qualche risata." }
+    },
+    "wowReveal": "In pratica è così che funziona la mia testa."
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "cookies": "Cookie",
+    "transparency": "Trasparenza Digitale",
+    "tagline": "© 2026 — Still exporting."
+  },
+  "meta": {
+    "homeTitle": "Grok — Filmmaker, Regista & Montatore",
+    "homeDescription": "Sito cinematografico di Grok, filmmaker, regista e montatore di 22 anni. Immagini che restano.",
+    "projectsTitle": "Progetti — Grok",
+    "projectsDescription": "Archivio professionale completo dei progetti cinematografici di Grok.",
+    "blogTitle": "Blog — Grok",
+    "blogDescription": "Conoscenza sul filmmaking, attrezzatura, montaggio e processo creativo di Grok.",
+    "aboutTitle": "About — Grok",
+    "aboutDescription": "La storia di Grok — filmmaker, regista e montatore.",
+    "contactTitle": "Contatti — Grok",
+    "contactDescription": "Facciamo qualcosa che valga la pena guardare. Contatta Grok."
+  },
+  "common": {
+    "loading": "Caricamento",
+    "notFound": "Pagina non trovata",
+    "backHome": "Torna alla home",
+    "language": "Lingua"
+  }
+}

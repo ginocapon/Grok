@@ -1,0 +1,130 @@
+[
+  {
+    "id": "proj-001",
+    "slug": "brand-film-atelier",
+    "title": {
+      "en": "Atelier — Brand Film",
+      "it": "Atelier — Brand Film"
+    },
+    "description": {
+      "en": "A cinematic brand film built around light, texture and rhythm. Shot on location with a minimal crew and a precise edit.",
+      "it": "Un brand film cinematografico costruito su luce, texture e ritmo. Riprese on location con crew ridotta e montaggio preciso."
+    },
+    "client": "Atelier Studio",
+    "year": 2026,
+    "month": 3,
+    "date": "2026-03-15",
+    "category": "brand-film",
+    "role": "Director · Editor · Color",
+    "featured": true,
+    "displayOrder": 1,
+    "published": true,
+    "heroImage": "/uploads/projects/brand-film-hero.png",
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": ["/uploads/projects/brand-film-hero.png"],
+    "bts": [],
+    "caseStudy": {
+      "en": "THE IDEA\n\nThe client needed something that felt premium without feeling corporate. We built the film around three words: craft, silence, detail.\n\nTHE PRODUCTION\n\nTwo-day shoot. Natural light where possible, one key LED for consistency. Every frame planned before arrival.\n\nTHE EDIT\n\nRhythm first. Long holds on texture. Cut on movement, not on beats. Color grade pushed toward warm shadows and clean highlights.",
+      "it": "L'IDEA\n\nIl cliente voleva qualcosa di premium senza sembrare corporate. Abbiamo costruito il film su tre parole: craft, silenzio, dettaglio.\n\nLA PRODUZIONE\n\nDue giorni di riprese. Luce naturale dove possibile, un LED key per coerenza. Ogni frame pianificato prima di arrivare on set.\n\nIL MONTAGGIO\n\nPrima il ritmo. Hold lunghi sulla texture. Tagli sul movimento, non sulla musica. Color grade verso ombre calde e highlight puliti."
+    },
+    "services": ["Direction", "Editing", "Color Grading"],
+    "credits": [
+      { "role": "Director / Editor", "name": "Grok" }
+    ],
+    "equipment": [],
+    "software": ["DaVinci Resolve", "Premiere Pro"],
+    "seo": {
+      "title": "Atelier Brand Film — Grok",
+      "description": "Cinematic brand film case study by Grok.",
+      "canonical": "/projects/brand-film-atelier",
+      "ogImage": "/uploads/projects/brand-film-hero.png",
+      "socialTitle": "Atelier Brand Film",
+      "socialDescription": "Premium brand film — direction and edit by Grok."
+    }
+  },
+  {
+    "id": "proj-002",
+    "slug": "nova-fashion-campaign",
+    "title": {
+      "en": "Nova — Fashion Campaign",
+      "it": "Nova — Campagna Fashion"
+    },
+    "description": {
+      "en": "Editorial fashion video with asymmetric compositions and controlled movement. YouTube preview available.",
+      "it": "Video fashion editoriale con composizioni asimmetriche e movimento controllato. Anteprima su YouTube."
+    },
+    "client": "Nova Collective",
+    "year": 2026,
+    "month": 2,
+    "date": "2026-02-20",
+    "category": "fashion",
+    "role": "Director · DOP · Editor",
+    "featured": true,
+    "displayOrder": 2,
+    "published": true,
+    "heroImage": "/uploads/projects/fashion-shoot-hero.png",
+    "heroVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "previewVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "gallery": ["/uploads/projects/fashion-shoot-hero.png"],
+    "bts": [],
+    "caseStudy": {
+      "en": "THE IDEA\n\nFashion that moves like film, not like a lookbook. Every shot designed for vertical and horizontal delivery.\n\nTHE SHOOT\n\nGimbal for flow. Static frames for tension. Light sculpted with flags and softboxes.\n\nTHE EDIT\n\nHard cuts between calm and motion. Minimal effects. The clothes lead.",
+      "it": "L'IDEA\n\nFashion che si muove come cinema, non come lookbook. Ogni shot pensato per delivery verticale e orizzontale.\n\nLE RIPRESE\n\nGimbal per fluidità. Frame statici per tensione. Luce scolpita con flags e softbox.\n\nIL MONTAGGIO\n\nTagli netti tra calma e movimento. Effetti minimi. A guidare sono i capi."
+    },
+    "services": ["Direction", "Cinematography", "Editing"],
+    "credits": [{ "role": "Director / Editor", "name": "Grok" }],
+    "equipment": [],
+    "software": ["Premiere Pro"],
+    "seo": {
+      "title": "Nova Fashion Campaign — Grok",
+      "description": "Fashion video campaign case study.",
+      "canonical": "/projects/nova-fashion-campaign",
+      "ogImage": "/uploads/projects/fashion-shoot-hero.png",
+      "socialTitle": "Nova Fashion Campaign",
+      "socialDescription": "Editorial fashion film by Grok."
+    }
+  },
+  {
+    "id": "proj-003",
+    "slug": "echo-music-video",
+    "title": {
+      "en": "Echo — Music Video",
+      "it": "Echo — Music Video"
+    },
+    "description": {
+      "en": "Night-lit music video with gel colors and practical lights. Built for rhythm and atmosphere.",
+      "it": "Music video notturno con gel colorati e luci pratiche. Costruito su ritmo e atmosfera."
+    },
+    "client": "Echo (Independent Artist)",
+    "year": 2025,
+    "month": 12,
+    "date": "2025-12-08",
+    "category": "music",
+    "role": "Director · Editor",
+    "featured": true,
+    "displayOrder": 3,
+    "published": true,
+    "heroImage": "/uploads/projects/music-video-hero.png",
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": ["/uploads/projects/music-video-hero.png"],
+    "bts": [],
+    "caseStudy": {
+      "en": "THE IDEA\n\nThe track feels like a city at 2am. We matched that with contrast, neon spill and slow motion where it hurt.\n\nTHE SHOOT\n\nOne location. Three light setups. Shot list tied to the song structure.\n\nTHE EDIT\n\nCut to the snare. Let verses breathe. Final grade: deep blues, controlled reds.",
+      "it": "L'IDEA\n\nLa traccia suona come una città alle 2 di notte. Abbiamo risposto con contrasto, spill neon e slow motion dove serviva.\n\nLE RIPRESE\n\nUna location. Tre setup luce. Shot list legata alla struttura del brano.\n\nIL MONTAGGIO\n\nTaglio sulla snare. Versi che respirano. Grade finale: blu profondi, rossi controllati."
+    },
+    "services": ["Direction", "Editing", "Color Grading"],
+    "credits": [{ "role": "Director / Editor", "name": "Grok" }],
+    "equipment": [],
+    "software": ["DaVinci Resolve"],
+    "seo": {
+      "title": "Echo Music Video — Grok",
+      "description": "Music video case study — night scene production.",
+      "canonical": "/projects/echo-music-video",
+      "ogImage": "/uploads/projects/music-video-hero.png",
+      "socialTitle": "Echo Music Video",
+      "socialDescription": "Night-lit music video by Grok."
+    }
+  }
+]

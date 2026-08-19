@@ -1,0 +1,119 @@
+[
+  {
+    "id": "blog-001",
+    "slug": "where-the-story-finds-its-rhythm",
+    "title": {
+      "en": "Where the Story Finds Its Rhythm",
+      "it": "Dove la Storia Trova il Suo Ritmo"
+    },
+    "subtitle": {
+      "en": "Why editing is the most honest part of filmmaking",
+      "it": "Perché il montaggio è la parte più onesta del filmmaking"
+    },
+    "excerpt": {
+      "en": "The camera captures possibilities. The edit chooses what the audience actually feels. Here's how I think about rhythm, silence and the cut that changes everything.",
+      "it": "La camera cattura possibilità. Il montaggio sceglie cosa sente davvero il pubblico. Ecco come penso a ritmo, silenzio e al taglio che cambia tutto."
+    },
+    "content": {
+      "en": "Most people think filmmaking ends when you stop recording. For me, that's when it starts getting honest.\n\nThe edit is where you admit what the story actually is — not what you hoped it would be on set. Sometimes the best moment is a half-second glance you almost deleted. Sometimes the hero shot doesn't make the timeline.\n\n## Rhythm before effects\n\nBefore color, before sound design, before anything — I build rhythm. I watch without audio. I listen without picture. The cut should work in both modes.\n\n## Practical workflow\n\n1. Assembly — rough, fast, no ego\n2. Structure — find the emotional spine\n3. Polish — only after the spine holds\n\n![Editing suite](/uploads/blog/editing-suite.jpg)\n\n*AI-generated illustration — editing suite reference*\n\n![Cartoon alter ego](/uploads/blog/editing-cartoon.png)\n\n*Cartoon alter ego — digital illustration (AI-generated)*\n\n## The rule I keep\n\nIf a frame doesn't change the feeling, it doesn't stay. Simple to say. Harder at 2am when you're attached to a shot.\n\nThat's basically the job.",
+      "it": "La maggior parte pensa che il filmmaking finisca quando smetti di registrare. Per me, è lì che inizia a diventare onesto.\n\nIl montaggio è dove ammetti cos'è davvero la storia — non cosa speravi fosse on set. A volte il momento migliore è uno sguardo di mezzo secondo che quasi cancelli.\n\n## Ritmo prima degli effetti\n\nPrima del color, prima del sound design — costruisco il ritmo. Guardo senza audio. Ascolto senza immagine.\n\n## Workflow pratico\n\n1. Assembly — grezzo, veloce, zero ego\n2. Struttura — trova la spina dorsale emotiva\n3. Polish — solo quando la struttura regge\n\n![Suite di montaggio](/uploads/blog/editing-suite.jpg)\n\n*Illustrazione AI — riferimento editing suite*\n\n![Alter ego cartoon](/uploads/blog/editing-cartoon.png)\n\n*Alter ego cartoon — illustrazione digitale (AI-generated)*\n\n## La regola che tengo\n\nSe un frame non cambia la sensazione, non resta. Facile da dire. Più difficile alle 2 di notte."
+    },
+    "featuredImage": "/uploads/blog/editing-suite.jpg",
+    "cartoonImage": "/uploads/blog/editing-cartoon.png",
+    "author": "Grok",
+    "category": "editing",
+    "tags": ["editing", "workflow", "rhythm"],
+    "featured": true,
+    "displayOrder": 1,
+    "published": true,
+    "publishedAt": "2026-08-10T10:00:00.000Z",
+    "updatedAt": "2026-08-10T10:00:00.000Z",
+    "readingTimeMinutes": 6,
+    "seo": {
+      "title": "Where the Story Finds Its Rhythm — Grok",
+      "description": "Editing philosophy and workflow from filmmaker Grok.",
+      "canonical": "/blog/where-the-story-finds-its-rhythm",
+      "ogImage": "/uploads/blog/editing-suite.jpg",
+      "socialTitle": "Where the Story Finds Its Rhythm",
+      "socialDescription": "Why editing is the most honest part of filmmaking."
+    }
+  },
+  {
+    "id": "blog-002",
+    "slug": "three-point-lighting-that-actually-works",
+    "title": {
+      "en": "Three-Point Lighting That Actually Works",
+      "it": "Illuminazione Three-Point Che Funziona Davvero"
+    },
+    "subtitle": {
+      "en": "Less theory, more frames you'll actually use",
+      "it": "Meno teoria, più frame che userai davvero"
+    },
+    "excerpt": {
+      "en": "Key, fill, rim — everyone knows the names. Fewer people know when to break them. A practical guide for interview and brand setups.",
+      "it": "Key, fill, rim — tutti conoscono i nomi. In pochi sanno quando romperli. Guida pratica per interview e brand setup."
+    },
+    "content": {
+      "en": "Good light doesn't mean complicated light. It means intentional light.\n\nFor most of the work I do — interviews, brand films, short social cuts — I start with a three-point base and then subtract until it feels human.\n\n## The setup\n\n- **Key** — your story. Soft or hard depending on mood.\n- **Fill** — just enough to keep detail. Often less than you think.\n- **Rim** — separation. One of the cheapest ways to look 'cinematic'.\n\n![Lighting setup](/uploads/blog/lighting-setup.jpg)\n\n*AI-generated reference — three-point lighting setup*\n\n![Cartoon lighting](/uploads/blog/lighting-cartoon.png)\n\n*Cartoon version — AI-generated illustration*\n\n## When I break the rules\n\nFashion? Sometimes kill the fill entirely. Corporate interview? Keep it clean and predictable. Music? Let color gels do the talking.\n\n## Quick checklist\n\n- Can you read the eyes?\n- Does the background have depth?\n- Would this still work in black and white?\n\nIf yes to all three — you're probably close.",
+      "it": "Buona luce non significa luce complicata. Significa luce intenzionale.\n\nPer la maggior parte del lavoro — interview, brand film, social — parto da three-point e poi sottraggo finché sembra umano.\n\n## Il setup\n\n- **Key** — la tua storia\n- **Fill** — solo abbastanza per tenere dettaglio\n- **Rim** — separazione. Uno dei modi più economici per sembrare 'cinema'\n\n![Setup luci](/uploads/blog/lighting-setup.jpg)\n\n*Riferimento AI — setup three-point*\n\n![Cartoon luci](/uploads/blog/lighting-cartoon.png)\n\n*Versione cartoon — illustrazione AI*\n\n## Quando rompo le regole\n\nFashion? A volte zero fill. Interview corporate? Pulito e prevedibile. Musica? I gel colorati parlano da soli."
+    },
+    "featuredImage": "/uploads/blog/lighting-setup.jpg",
+    "cartoonImage": "/uploads/blog/lighting-cartoon.png",
+    "author": "Grok",
+    "category": "lighting",
+    "tags": ["lighting", "three-point", "interview"],
+    "featured": true,
+    "displayOrder": 2,
+    "published": true,
+    "publishedAt": "2026-08-05T10:00:00.000Z",
+    "updatedAt": "2026-08-05T10:00:00.000Z",
+    "readingTimeMinutes": 5,
+    "seo": {
+      "title": "Three-Point Lighting — Grok",
+      "description": "Practical three-point lighting guide for video production.",
+      "canonical": "/blog/three-point-lighting-that-actually-works",
+      "ogImage": "/uploads/blog/lighting-setup.jpg",
+      "socialTitle": "Three-Point Lighting That Actually Works",
+      "socialDescription": "Practical lighting guide for filmmakers."
+    }
+  },
+  {
+    "id": "blog-003",
+    "slug": "four-years-four-lessons",
+    "title": {
+      "en": "Four Years. Four Lessons.",
+      "it": "Quattro Anni. Quattro Lezioni."
+    },
+    "subtitle": {
+      "en": "What changed when filmmaking stopped being a hobby",
+      "it": "Cosa è cambiato quando il filmmaking ha smesso di essere un hobby"
+    },
+    "excerpt": {
+      "en": "Four years ago I picked up a camera. Somehow it became part of me. These are the lessons that survived the transition from passion to profession.",
+      "it": "Quattro anni fa ho preso in mano una camera. In qualche modo è diventata parte di me. Queste sono le lezioni sopravvissute al passaggio da passione a professione."
+    },
+    "content": {
+      "en": "Nobody tells you that going professional doesn't mean you stop experimenting. It means you experiment with deadlines.\n\n## 1. Pre-production is respect\n\nFor your crew, your client, and your future self at 1am.\n\n## 2. Simple is expensive\n\nClean frames take more time than complex ones. Always.\n\n## 3. Your taste is the product\n\nGear matters. Taste matters more.\n\n## 4. Fun is not optional\n\nA 12-hour day without laughter produces different images. I've tested this.\n\n![Creative process](/uploads/blog/creative-process.jpg)\n\n*AI-generated — planning a shot on location*\n\n![Cartoon creative](/uploads/blog/creative-cartoon.png)\n\n*Cartoon alter ego — AI-generated illustration*\n\nFour years in, I'm still learning. That's the point.",
+      "it": "Nessuno ti dice che diventare professionista non significa smettere di sperimentare. Significa sperimentare con le deadline.\n\n## 1. Pre-produzione è rispetto\n\nPer la crew, il cliente e te stesso alle 1 di notte.\n\n## 2. Semplice costa caro\n\nFrame puliti richiedono più tempo di quelli complessi. Sempre.\n\n## 3. Il tuo gusto è il prodotto\n\nL'attrezzatura conta. Il gusto conta di più.\n\n## 4. Divertirsi non è opzionale\n\nUna giornata da 12 ore senza risate produce immagini diverse. L'ho testato.\n\n![Processo creativo](/uploads/blog/creative-process.jpg)\n\n*AI-generated — pianificazione shot on location*\n\n![Cartoon creativo](/uploads/blog/creative-cartoon.png)\n\n*Alter ego cartoon — illustrazione AI*"
+    },
+    "featuredImage": "/uploads/blog/creative-process.jpg",
+    "cartoonImage": "/uploads/blog/creative-cartoon.png",
+    "author": "Grok",
+    "category": "creative-process",
+    "tags": ["career", "filmmaking", "lessons"],
+    "featured": true,
+    "displayOrder": 3,
+    "published": true,
+    "publishedAt": "2026-07-28T10:00:00.000Z",
+    "updatedAt": "2026-07-28T10:00:00.000Z",
+    "readingTimeMinutes": 4,
+    "seo": {
+      "title": "Four Years Four Lessons — Grok",
+      "description": "Lessons from four years of professional filmmaking.",
+      "canonical": "/blog/four-years-four-lessons",
+      "ogImage": "/uploads/blog/creative-process.jpg",
+      "socialTitle": "Four Years. Four Lessons.",
+      "socialDescription": "From passion to profession — what survived."
+    }
+  }
+]

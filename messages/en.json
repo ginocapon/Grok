@@ -1,0 +1,162 @@
+{
+  "nav": {
+    "home": "HOME",
+    "projects": "PROJECTS",
+    "blog": "BLOG",
+    "about": "ABOUT",
+    "contact": "CONTACT"
+  },
+  "hero": {
+    "headline": "I MAKE MOVING IMAGES.",
+    "subheadline": "22. Camera in hand. Always looking for the next shot.",
+    "ctaPrimary": "WATCH REEL",
+    "ctaSecondary": "VIEW PROJECTS",
+    "ctaTalk": "LET'S TALK",
+    "rec": "REC",
+    "fps": "24 FPS",
+    "take": "TAKE 01",
+    "timecode": "00:00:00:00"
+  },
+  "intro": {
+    "text": "I'm a filmmaker, director and editor obsessed with turning good ideas into images people remember.",
+    "cta": "MORE ABOUT ME"
+  },
+  "projects": {
+    "title": "SELECTED WORK",
+    "viewAll": "VIEW ALL PROJECTS",
+    "empty": "Projects will appear here once published in the CMS.",
+    "filters": {
+      "all": "ALL",
+      "commercial": "COMMERCIAL",
+      "brand-film": "BRAND FILM",
+      "fashion": "FASHION",
+      "music": "MUSIC",
+      "social": "SOCIAL",
+      "events": "EVENTS",
+      "short-film": "SHORT FILM",
+      "experimental": "EXPERIMENTAL"
+    },
+    "visual": "VISUAL",
+    "timeline": "TIMELINE",
+    "client": "CLIENT",
+    "year": "YEAR",
+    "category": "CATEGORY",
+    "role": "ROLE"
+  },
+  "caseStudy": {
+    "idea": "THE IDEA",
+    "production": "THE PRODUCTION",
+    "shoot": "THE SHOOT",
+    "edit": "THE EDIT",
+    "bts": "BEHIND THE SCENES",
+    "finalFilm": "FINAL FILM",
+    "related": "RELATED PROJECTS",
+    "contactCta": "LET'S MAKE SOMETHING WORTH WATCHING"
+  },
+  "aboutPreview": {
+    "line1": "22.",
+    "line2": "Filmmaker.",
+    "line3": "Editor.",
+    "line4": "Creative mind.",
+    "line5": "Professional when it matters.",
+    "line6": "Probably laughing when it doesn't.",
+    "cta": "MORE ABOUT ME"
+  },
+  "blog": {
+    "title": "FROM THE EDIT BAY",
+    "viewAll": "READ ALL ARTICLES",
+    "empty": "Articles will appear here once published.",
+    "latest": "LATEST",
+    "categories": "CATEGORIES",
+    "archive": "ARCHIVE",
+    "readingTime": "min read",
+    "updated": "Updated"
+  },
+  "contact": {
+    "headline": "LET'S MAKE SOMETHING WORTH WATCHING.",
+    "subheadline": "Have an idea? A project? A weird concept that somehow needs to become a film?",
+    "name": "NAME",
+    "email": "EMAIL",
+    "company": "COMPANY",
+    "projectType": "PROJECT TYPE",
+    "budget": "BUDGET",
+    "timeline": "TIMELINE",
+    "message": "MESSAGE",
+    "gdpr": "I agree to the processing of my personal data according to the privacy policy.",
+    "submit": "SEND MESSAGE",
+    "sending": "SENDING...",
+    "success": "Message received. Now I just need to make it look good.",
+    "error": "Something went wrong. Try again or email directly."
+  },
+  "about": {
+    "opening": "Four years ago, I picked up a camera. Somehow, it became part of me.",
+    "openingAlt": "I'm 22. I've been making films for four years. What started as a passion became a job. Then the job became something much bigger. Now I can't really imagine doing anything else.",
+    "passion": {
+      "headline": "I FEEL IT IN MY BLOOD.",
+      "text": "Some people have a hobby. For me, this became something else. I notice light before I notice the room. I hear edits in music. I think in frames. At some point, filmmaking stopped being something I do. It became part of how I see."
+    },
+    "whyFilm": {
+      "headline": "WHY FILM?",
+      "text": "Video lets me combine everything I love into one thing people can actually feel."
+    },
+    "evolution": {
+      "headline": "THE PATH SO FAR",
+      "years": "4 YEARS",
+      "freelance": "FREELANCE",
+      "moreProductions": "MORE PRODUCTIONS",
+      "moreExperience": "MORE EXPERIENCE",
+      "fullTime": "FULL-TIME FILMMAKING",
+      "biggerAmbitions": "BIGGER AMBITIONS"
+    },
+    "technology": {
+      "headline": "TECHNOLOGY",
+      "quote": "THE GEAR ISN'T THE POINT. Knowing exactly what your tools can do helps you push the image further.",
+      "empty": "Equipment details will be added as verified."
+    },
+    "philosophy": {
+      "items": [
+        "GOOD LIGHT MATTERS.",
+        "GOOD IDEAS MATTER MORE.",
+        "TECHNOLOGY SHOULD SERVE THE STORY.",
+        "DETAILS CHANGE EVERYTHING.",
+        "SIMPLE CAN BE HARDER THAN COMPLEX.",
+        "A GOOD FRAME IS ONLY THE BEGINNING.",
+        "THE EDIT IS WHERE THE STORY FINDS ITS RHYTHM."
+      ]
+    },
+    "personality": {
+      "precise": { "title": "PRECISE.", "desc": "Because details matter." },
+      "direct": { "title": "DIRECT.", "desc": "Less talking. More shooting." },
+      "creative": { "title": "CREATIVE.", "desc": "There is always another way to see it." },
+      "reliable": { "title": "RELIABLE.", "desc": "The deadline is the deadline." },
+      "curious": { "title": "CURIOUS.", "desc": "The next technique is always worth learning." },
+      "humble": { "title": "HUMBLE.", "desc": "There is always something better to learn." },
+      "fun": { "title": "FUN.", "desc": "A 12-hour production day needs some laughter." }
+    },
+    "wowReveal": "That's basically how my brain works."
+  },
+  "footer": {
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "transparency": "Digital Transparency",
+    "tagline": "© 2026 — Still exporting."
+  },
+  "meta": {
+    "homeTitle": "Grok — Filmmaker, Director & Editor",
+    "homeDescription": "Cinematic personal website of Grok, a 22-year-old filmmaker, director and editor. Moving images that matter.",
+    "projectsTitle": "Projects — Grok",
+    "projectsDescription": "Complete professional archive of filmmaking projects by Grok.",
+    "blogTitle": "Blog — Grok",
+    "blogDescription": "Filmmaking knowledge, gear, editing, and creative process from Grok.",
+    "aboutTitle": "About — Grok",
+    "aboutDescription": "The story of Grok — filmmaker, director and editor.",
+    "contactTitle": "Contact — Grok",
+    "contactDescription": "Let's make something worth watching. Get in touch with Grok."
+  },
+  "common": {
+    "loading": "Loading",
+    "notFound": "Page not found",
+    "backHome": "Back to home",
+    "language": "Language"
+  }
+}

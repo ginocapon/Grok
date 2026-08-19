@@ -1,0 +1,34 @@
+{
+  "sources": [
+    {
+      "name": "GSAP Documentation",
+      "url": "https://gsap.com/docs/v3/",
+      "category": "motion",
+      "authority": "official"
+    },
+    {
+      "name": "Framer Awards",
+      "url": "https://www.framer.com/awards/",
+      "category": "design",
+      "authority": "industry"
+    },
+    {
+      "name": "Awwwards",
+      "url": "https://www.awwwards.com/",
+      "category": "design",
+      "authority": "industry"
+    },
+    {
+      "name": "web.dev Performance",
+      "url": "https://web.dev/performance/",
+      "category": "performance",
+      "authority": "official"
+    },
+    {
+      "name": "MDN Accessibility",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/Accessibility",
+      "category": "accessibility",
+      "authority": "official"
+    }
+  ]
+}

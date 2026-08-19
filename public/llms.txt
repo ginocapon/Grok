@@ -1,0 +1,39 @@
+# Grok — Filmmaker, Director & Editor
+
+> Grok is a 22-year-old professional filmmaker, director and editor with approximately four years of professional experience in video production.
+
+## About
+
+- Website: https://grok.film (configure NEXT_PUBLIC_SITE_URL)
+- Role: Filmmaker, Director, Editor
+- Experience: ~4 years professional
+- Languages: English (primary), Italian
+
+## Services
+
+- Commercial video production
+- Brand films
+- Fashion video
+- Music videos
+- Social content
+- Event coverage
+- Short films
+- Experimental projects
+
+## Site Structure
+
+- /en/ — English homepage
+- /it/ — Italian homepage
+- /en/projects — Project archive (visual + timeline modes)
+- /it/progetti — Italian project archive
+- /en/blog — Filmmaking blog and knowledge base
+- /en/about — Personal story and philosophy
+- /en/contact — Contact form
+
+## Content Policy
+
+All projects, clients, and statistics on this site are real and verified. No fabricated achievements.
+
+## Contact
+
+Email: hello@grok.film

@@ -1,0 +1,42 @@
+[
+  {
+    "type": "page_view",
+    "path": "/en",
+    "locale": "en",
+    "metadata": {
+      "referrer": "https://localhost:3000/en",
+      "device": "desktop"
+    },
+    "timestamp": "2026-08-19T10:30:58.919Z"
+  },
+  {
+    "type": "page_view",
+    "path": "/it/progetti/nova-fashion-campaign",
+    "locale": "it",
+    "metadata": {
+      "referrer": "https://localhost:3000/it/progetti/nova-fashion-campaign",
+      "device": "desktop"
+    },
+    "timestamp": "2026-08-19T10:30:58.944Z"
+  },
+  {
+    "type": "page_view",
+    "path": "/it/progetti",
+    "locale": "it",
+    "metadata": {
+      "referrer": "https://localhost:3000/it/progetti",
+      "device": "desktop"
+    },
+    "timestamp": "2026-08-19T10:32:09.079Z"
+  },
+  {
+    "type": "page_view",
+    "path": "/it/progetti",
+    "locale": "it",
+    "metadata": {
+      "referrer": "https://localhost:3000/it/progetti",
+      "device": "desktop"
+    },
+    "timestamp": "2026-08-19T10:32:09.091Z"
+  }
+]
