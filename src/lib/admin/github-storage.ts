@@ -117,7 +117,8 @@ export async function uploadPublicFile(
   if (!token) throw new Error("Token GitHub mancante");
 
   const safeFolder = folder.replace(/[^a-z0-9-]/gi, "");
-  const ext = file.name.includes(".") ? file.name.slice(file.name.lastIndexOf(".")) : ".jpg";
+  const isImage = file.type.startsWith("image/") && file.type !== "image/gif";
+  const ext = isImage ? ".webp" : file.name.includes(".") ? file.name.slice(file.name.lastIndexOf(".")) : ".mp4";
   const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`;
   const repoPath = `public/uploads/${safeFolder}/${filename}`;
 

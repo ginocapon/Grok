@@ -104,7 +104,7 @@ export function AboutPageClient() {
               aria-label="Identity transformation"
             >
               <SiteImage
-                src="/images/grok-portrait.png"
+                src="/images/grok-portrait.webp"
                 alt="Grok"
                 fill
                 className={cn(

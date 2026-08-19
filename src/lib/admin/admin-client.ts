@@ -1,4 +1,5 @@
 import type { BlogArticle, Project } from "@/types";
+import { prepareImageForUpload } from "@/lib/admin/image-upload";
 import {
   isPagesAdmin,
   readJsonFile,
@@ -208,12 +209,13 @@ export async function adminDeleteArticle(id: string): Promise<void> {
 }
 
 export async function adminUploadFile(folder: string, file: File): Promise<string> {
+  const prepared = await prepareImageForUpload(file);
   if (isPagesAdmin()) {
-    const result = await uploadPublicFile(folder, file);
+    const result = await uploadPublicFile(folder, prepared);
     return result.url;
   }
   const fd = new FormData();
-  fd.append("file", file);
+  fd.append("file", prepared);
   fd.append("folder", folder);
   const res = await localFetch("/api/admin/upload", { method: "POST", body: fd });
   if (res.status === 401) throw new AdminAuthError();

@@ -26,7 +26,7 @@ export function AboutPreview() {
                 aria-label={mode === "real" ? "Switch to cartoon alter ego" : "Switch to real photo"}
               >
                 <SiteImage
-                  src={mode === "real" ? "/images/grok-portrait.png" : "/uploads/characters/grok-tekken.png"}
+                  src={mode === "real" ? "/images/grok-portrait.webp" : "/uploads/characters/grok-tekken.webp"}
                   alt={mode === "real" ? "Grok — Filmmaker portrait" : "Grok — Cartoon alter ego (AI-generated)"}
                   fill
                   className={cn(

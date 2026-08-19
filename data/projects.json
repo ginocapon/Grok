@@ -19,10 +19,10 @@
     "featured": true,
     "displayOrder": 1,
     "published": true,
-    "heroImage": "/uploads/projects/brand-film-hero.png",
-    "heroVideo": null,
-    "previewVideo": null,
-    "gallery": ["/uploads/projects/brand-film-hero.png"],
+    "heroImage": "/uploads/projects/brand-film-hero.webp",
+    "heroVideo": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "previewVideo": "https://www.youtube.com/watch?v=aqz-KE-bpKQ",
+    "gallery": ["/uploads/projects/brand-film-hero.webp"],
     "bts": [],
     "caseStudy": {
       "en": "THE IDEA\n\nThe client needed something that felt premium without feeling corporate. We built the film around three words: craft, silence, detail.\n\nTHE PRODUCTION\n\nTwo-day shoot. Natural light where possible, one key LED for consistency. Every frame planned before arrival.\n\nTHE EDIT\n\nRhythm first. Long holds on texture. Cut on movement, not on beats. Color grade pushed toward warm shadows and clean highlights.",
@@ -38,7 +38,7 @@
       "title": "Atelier Brand Film — Grok",
       "description": "Cinematic brand film case study by Grok.",
       "canonical": "/projects/brand-film-atelier",
-      "ogImage": "/uploads/projects/brand-film-hero.png",
+      "ogImage": "/uploads/projects/brand-film-hero.webp",
       "socialTitle": "Atelier Brand Film",
       "socialDescription": "Premium brand film — direction and edit by Grok."
     }
@@ -63,10 +63,10 @@
     "featured": true,
     "displayOrder": 2,
     "published": true,
-    "heroImage": "/uploads/projects/fashion-shoot-hero.png",
+    "heroImage": "/uploads/projects/fashion-shoot-hero.webp",
     "heroVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     "previewVideo": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    "gallery": ["/uploads/projects/fashion-shoot-hero.png"],
+    "gallery": ["/uploads/projects/fashion-shoot-hero.webp"],
     "bts": [],
     "caseStudy": {
       "en": "THE IDEA\n\nFashion that moves like film, not like a lookbook. Every shot designed for vertical and horizontal delivery.\n\nTHE SHOOT\n\nGimbal for flow. Static frames for tension. Light sculpted with flags and softboxes.\n\nTHE EDIT\n\nHard cuts between calm and motion. Minimal effects. The clothes lead.",
@@ -80,7 +80,7 @@
       "title": "Nova Fashion Campaign — Grok",
       "description": "Fashion video campaign case study.",
       "canonical": "/projects/nova-fashion-campaign",
-      "ogImage": "/uploads/projects/fashion-shoot-hero.png",
+      "ogImage": "/uploads/projects/fashion-shoot-hero.webp",
       "socialTitle": "Nova Fashion Campaign",
       "socialDescription": "Editorial fashion film by Grok."
     }
@@ -105,10 +105,10 @@
     "featured": true,
     "displayOrder": 3,
     "published": true,
-    "heroImage": "/uploads/projects/music-video-hero.png",
-    "heroVideo": null,
-    "previewVideo": null,
-    "gallery": ["/uploads/projects/music-video-hero.png"],
+    "heroImage": "/uploads/projects/music-video-hero.webp",
+    "heroVideo": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+    "previewVideo": "https://www.youtube.com/watch?v=9bZkp7q19f0",
+    "gallery": ["/uploads/projects/music-video-hero.webp"],
     "bts": [],
     "caseStudy": {
       "en": "THE IDEA\n\nThe track feels like a city at 2am. We matched that with contrast, neon spill and slow motion where it hurt.\n\nTHE SHOOT\n\nOne location. Three light setups. Shot list tied to the song structure.\n\nTHE EDIT\n\nCut to the snare. Let verses breathe. Final grade: deep blues, controlled reds.",
@@ -122,7 +122,7 @@
       "title": "Echo Music Video — Grok",
       "description": "Music video case study — night scene production.",
       "canonical": "/projects/echo-music-video",
-      "ogImage": "/uploads/projects/music-video-hero.png",
+      "ogImage": "/uploads/projects/music-video-hero.webp",
       "socialTitle": "Echo Music Video",
       "socialDescription": "Night-lit music video by Grok."
     }

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
+import sharp from "sharp";
 import { verifyAdmin, adminUnauthorized } from "@/lib/admin/auth";
 
 const ALLOWED_TYPES = [
@@ -36,16 +37,32 @@ export async function POST(request: NextRequest) {
     }
 
     const safeFolder = folder.replace(/[^a-z0-9-]/gi, "");
-    const ext = path.extname(file.name) || (file.type.startsWith("video/") ? ".mp4" : ".jpg");
-    const filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`;
     const uploadDir = path.join(process.cwd(), "public", "uploads", safeFolder);
     await mkdir(uploadDir, { recursive: true });
 
     const buffer = Buffer.from(await file.arrayBuffer());
-    await writeFile(path.join(uploadDir, filename), buffer);
+    const isImage = file.type.startsWith("image/") && file.type !== "image/gif";
+
+    let filename: string;
+    let outBuffer: Buffer;
+
+    if (isImage) {
+      filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}.webp`;
+      outBuffer = await sharp(buffer)
+        .rotate()
+        .resize({ width: 1920, withoutEnlargement: true })
+        .webp({ quality: 82 })
+        .toBuffer();
+    } else {
+      const ext = path.extname(file.name) || (file.type.startsWith("video/") ? ".mp4" : ".webp");
+      filename = `${Date.now()}-${Math.random().toString(36).slice(2, 8)}${ext}`;
+      outBuffer = buffer;
+    }
+
+    await writeFile(path.join(uploadDir, filename), outBuffer);
 
     const url = `/uploads/${safeFolder}/${filename}`;
-    return NextResponse.json({ url, filename, type: file.type, size: file.size });
+    return NextResponse.json({ url, filename, type: isImage ? "image/webp" : file.type, size: outBuffer.length });
   } catch {
     return NextResponse.json({ error: "Upload failed" }, { status: 500 });
   }
