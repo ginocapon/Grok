@@ -7,10 +7,11 @@ import {
   getGitHubToken,
   clearGitHubToken,
   setGitHubToken,
+  isPagesSessionSaved,
+  setPagesSession,
 } from "@/lib/admin/github-storage";
 import { slugify } from "@/lib/admin/slugify";
 
-const SESSION_KEY = "grok-admin-session";
 const ADMIN_PASSWORD = process.env.NEXT_PUBLIC_ADMIN_PASSWORD ?? "grok-admin";
 
 export class AdminAuthError extends Error {
@@ -23,20 +24,20 @@ export class AdminAuthError extends Error {
 export function isAdminSessionActive(): boolean {
   if (typeof window === "undefined") return false;
   if (!isPagesAdmin()) return false;
-  return sessionStorage.getItem(SESSION_KEY) === "1" && !!getGitHubToken();
+  return isPagesSessionSaved() && !!getGitHubToken();
 }
 
 export function startPagesAdminSession(password: string, githubToken: string): boolean {
   if (password !== ADMIN_PASSWORD) return false;
   const token = githubToken.trim();
   if (!token) return false;
-  setGitHubToken(token);
-  sessionStorage.setItem(SESSION_KEY, "1");
+  setGitHubToken(token, true);
+  setPagesSession(true);
   return true;
 }
 
 export function clearAdminSession() {
-  sessionStorage.removeItem(SESSION_KEY);
+  setPagesSession(false);
   clearGitHubToken();
 }
 

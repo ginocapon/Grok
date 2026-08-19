@@ -3,22 +3,49 @@ const BRANCH = process.env.NEXT_PUBLIC_GITHUB_BRANCH ?? "main";
 const [OWNER, REPO] = REPO_SLUG.split("/");
 
 const TOKEN_KEY = "grok-github-token";
+const SESSION_KEY = "grok-admin-session";
+
+function storage() {
+  if (typeof window === "undefined") return null;
+  return window.localStorage;
+}
 
 export function isPagesAdmin(): boolean {
   return process.env.NEXT_PUBLIC_GITHUB_PAGES === "true";
 }
 
 export function getGitHubToken(): string | null {
-  if (typeof window === "undefined") return null;
-  return sessionStorage.getItem(TOKEN_KEY);
+  const store = storage();
+  if (!store) return null;
+  return store.getItem(TOKEN_KEY) ?? sessionStorage.getItem(TOKEN_KEY);
 }
 
-export function setGitHubToken(token: string) {
-  sessionStorage.setItem(TOKEN_KEY, token);
+export function setGitHubToken(token: string, persist = true) {
+  if (typeof window === "undefined") return;
+  if (persist) {
+    localStorage.setItem(TOKEN_KEY, token);
+  } else {
+    sessionStorage.setItem(TOKEN_KEY, token);
+  }
 }
 
 export function clearGitHubToken() {
+  if (typeof window === "undefined") return;
+  localStorage.removeItem(TOKEN_KEY);
   sessionStorage.removeItem(TOKEN_KEY);
+}
+
+export function isPagesSessionSaved(): boolean {
+  const store = storage();
+  if (!store) return false;
+  return store.getItem(SESSION_KEY) === "1";
+}
+
+export function setPagesSession(active: boolean) {
+  const store = storage();
+  if (!store) return;
+  if (active) store.setItem(SESSION_KEY, "1");
+  else store.removeItem(SESSION_KEY);
 }
 
 function apiUrl(path: string) {

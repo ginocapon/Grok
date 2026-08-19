@@ -4,7 +4,7 @@ import { useState, useEffect, useCallback } from "react";
 import type { Project, BlogArticle, ProjectCategory, BlogCategory } from "@/types";
 import { cn } from "@/lib/utils";
 import { SiteImage } from "@/components/ui/SiteImage";
-import { isPagesAdmin } from "@/lib/admin/github-storage";
+import { isPagesAdmin, getGitHubToken } from "@/lib/admin/github-storage";
 import {
   AdminAuthError,
   adminLoadProjects,
@@ -28,6 +28,11 @@ function LoginGate({ onLogin }: { onLogin: () => void }) {
   const [githubToken, setGithubToken] = useState("");
   const [error, setError] = useState("");
   const pagesMode = isPagesAdmin();
+
+  useEffect(() => {
+    const saved = getGitHubToken();
+    if (saved) setGithubToken(saved);
+  }, []);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -72,8 +77,9 @@ function LoginGate({ onLogin }: { onLogin: () => void }) {
               className="w-full bg-bg border border-white/10 rounded-sm px-4 py-3 text-sm mb-4 focus:border-accent focus:outline-none"
             />
             <p className="font-mono-tech text-xs text-text-secondary mb-4 leading-relaxed">
-              Crea un token gratis su GitHub → Settings → Developer settings → Personal access tokens.
-              Serve permesso <strong className="text-text-primary">repo</strong> (o Contents: read/write sul repo Grok).
+              Il token viene salvato su questo browser — lo inserisci una sola volta.
+              Crealo gratis su GitHub → Settings → Developer settings → Personal access tokens
+              (permesso <strong className="text-text-primary">repo</strong>).
             </p>
           </>
         )}
