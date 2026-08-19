@@ -110,7 +110,7 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
               <button
                 type="button"
                 onClick={togglePlay}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-bg/50 backdrop-blur-sm text-text-primary hover:border-accent transition-colors"
+                className="btn-icon-3d"
                 aria-label={playing ? "Pause" : "Play"}
               >
                 {playing ? <Pause size={16} /> : <Play size={16} />}
@@ -118,7 +118,7 @@ export function Hero({ posterUrl, videoUrl }: HeroProps) {
               <button
                 type="button"
                 onClick={toggleMute}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-white/20 bg-bg/50 backdrop-blur-sm text-text-primary hover:border-accent transition-colors"
+                className="btn-icon-3d"
                 aria-label={muted ? "Unmute" : "Mute"}
               >
                 {muted ? <VolumeX size={16} /> : <Volume2 size={16} />}

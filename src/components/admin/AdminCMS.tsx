@@ -451,8 +451,8 @@ export function AdminCMS() {
             type="button"
             onClick={() => setTab(id)}
             className={cn(
-              "flex items-center gap-2 px-6 py-4 font-mono-tech text-xs tracking-widest transition-colors min-h-[44px]",
-              tab === id ? "text-accent border-b-2 border-accent" : "text-text-secondary hover:text-text-primary"
+              "btn-toggle btn-toggle-sm font-mono-tech tracking-widest rounded-none border-x-0 border-t-0",
+              tab === id && "btn-toggle-active"
             )}
           >
             <Icon size={14} /> {label}
