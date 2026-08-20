@@ -34,6 +34,10 @@ html {
   scroll-behavior: smooth;
 }
 
+html.lenis {
+  scroll-behavior: auto;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -69,21 +73,23 @@ body {
   letter-spacing: 0.08em;
 }
 
-/* 3D Button base — marked depth with layered faces */
+/* 3D buttons — depth via box-shadow (follows border-radius, no bleed) */
 .btn-3d,
 .btn-toggle,
 .btn-icon-3d {
+  --btn-depth: 6px;
+  --btn-depth-color: #1a1a1a;
   position: relative;
   isolation: isolate;
-  overflow: visible;
   cursor: pointer;
-  transform-style: preserve-3d;
   transition:
     transform 0.15s ease,
     box-shadow 0.15s ease,
     border-color 0.15s ease,
-    color 0.15s ease,
-    filter 0.15s ease;
+    color 0.15s ease;
+  box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 10px) rgba(0, 0, 0, 0.2);
 }
 
 .btn-3d::before,
@@ -94,7 +100,7 @@ body {
   inset: 0;
   border-radius: inherit;
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
   background: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0.22) 0%,
@@ -103,23 +109,7 @@ body {
   );
 }
 
-.btn-3d::after,
-.btn-toggle::after,
-.btn-icon-3d::after {
-  content: "";
-  position: absolute;
-  left: 3px;
-  right: 3px;
-  bottom: calc(var(--btn-depth, 8px) * -1);
-  height: var(--btn-depth, 8px);
-  border-radius: 0 0 4px 4px;
-  pointer-events: none;
-  z-index: -1;
-  transition: bottom 0.15s ease, height 0.15s ease, opacity 0.15s ease;
-}
-
 .btn-3d {
-  --btn-depth: 8px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -134,91 +124,83 @@ body {
   border-style: solid;
   border-width: 2px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.45);
-  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.42));
 }
 
 .btn-3d-primary {
+  --btn-depth-color: #4a0b07;
   background: linear-gradient(180deg, #ff6a5e 0%, #ff2a1a 42%, #c41a10 78%, #9a120c 100%);
   color: var(--white);
   border-color: rgba(255, 255, 255, 0.22);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 10px) rgba(0, 0, 0, 0.28),
     0 3px 0 rgba(255, 255, 255, 0.18) inset,
     0 -4px 0 rgba(0, 0, 0, 0.28) inset,
     0 0 0 1px rgba(255, 255, 255, 0.06) inset;
 }
 
-.btn-3d-primary::after {
-  background: linear-gradient(180deg, #7a130e 0%, #4a0b07 100%);
-}
-
 .btn-3d-primary:hover {
-  --btn-depth: 11px;
-  transform: translateY(-4px);
-  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.5)) drop-shadow(0 8px 24px rgba(255, 42, 26, 0.35));
+  --btn-depth: 3px;
+  transform: translateY(-3px);
 }
 
 .btn-3d-primary:active {
-  --btn-depth: 3px;
-  transform: translateY(5px);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.35));
+  --btn-depth: 1px;
+  transform: translateY(2px);
 }
 
 .btn-3d-secondary {
+  --btn-depth-color: #020202;
   background: linear-gradient(180deg, #2a2a2a 0%, #161616 50%, #0a0a0a 85%, #050505 100%);
   color: var(--text-primary);
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 10px) rgba(0, 0, 0, 0.3),
     0 3px 0 rgba(255, 255, 255, 0.1) inset,
     0 -4px 0 rgba(0, 0, 0, 0.35) inset,
     0 0 0 1px rgba(255, 255, 255, 0.04) inset;
 }
 
-.btn-3d-secondary::after {
-  background: linear-gradient(180deg, #080808 0%, #020202 100%);
-}
-
 .btn-3d-secondary:hover {
-  --btn-depth: 11px;
-  transform: translateY(-4px);
+  --btn-depth: 3px;
+  transform: translateY(-3px);
   border-color: rgba(255, 42, 26, 0.6);
-  filter: drop-shadow(0 16px 28px rgba(0, 0, 0, 0.55));
 }
 
 .btn-3d-secondary:active {
-  --btn-depth: 3px;
-  transform: translateY(5px);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.4));
+  --btn-depth: 1px;
+  transform: translateY(2px);
 }
 
 .btn-3d-ghost {
+  --btn-depth-color: #0a0a0a;
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 45%, transparent 100%);
   color: var(--text-primary);
   border-color: rgba(245, 243, 238, 0.32);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 10px) rgba(0, 0, 0, 0.22),
     0 2px 0 rgba(255, 255, 255, 0.08) inset,
     0 -3px 0 rgba(0, 0, 0, 0.2) inset;
 }
 
-.btn-3d-ghost::after {
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.75) 100%);
-}
-
 .btn-3d-ghost:hover {
-  --btn-depth: 9px;
+  --btn-depth: 3px;
   transform: translateY(-3px);
   border-color: var(--accent);
   color: var(--accent-light);
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.4)) drop-shadow(0 6px 16px rgba(255, 42, 26, 0.18));
 }
 
 .btn-3d-ghost:active {
-  --btn-depth: 3px;
-  transform: translateY(4px);
+  --btn-depth: 1px;
+  transform: translateY(2px);
 }
 
 /* Toggle / filter buttons */
 .btn-toggle {
-  --btn-depth: 6px;
+  --btn-depth: 5px;
+  --btn-depth-color: #020202;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -236,61 +218,56 @@ body {
   color: var(--text-secondary);
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 8px) rgba(0, 0, 0, 0.26),
     0 2px 0 rgba(255, 255, 255, 0.09) inset,
     0 -3px 0 rgba(0, 0, 0, 0.28) inset;
-  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.38));
-}
-
-.btn-toggle::after {
-  background: linear-gradient(180deg, #070707 0%, #020202 100%);
 }
 
 .btn-toggle:hover {
-  --btn-depth: 9px;
+  --btn-depth: 2px;
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.3);
   color: var(--text-primary);
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.45));
 }
 
 .btn-toggle:active {
-  --btn-depth: 2px;
-  transform: translateY(4px);
+  --btn-depth: 1px;
+  transform: translateY(2px);
 }
 
 .btn-toggle-active {
+  --btn-depth-color: #3d0a07;
   border-color: rgba(255, 42, 26, 0.7);
   color: var(--accent);
   background: linear-gradient(180deg, rgba(255, 62, 48, 0.28) 0%, rgba(255, 42, 26, 0.14) 50%, rgba(120, 18, 10, 0.35) 100%);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 8px) rgba(255, 42, 26, 0.12),
     0 2px 0 rgba(255, 255, 255, 0.14) inset,
     0 -3px 0 rgba(0, 0, 0, 0.22) inset;
-}
-
-.btn-toggle-active::after {
-  background: linear-gradient(180deg, #6b120c 0%, #3d0a07 100%);
 }
 
 .btn-toggle-active:hover {
   border-color: rgba(255, 42, 26, 0.85);
   color: var(--accent-light);
-  filter: drop-shadow(0 12px 22px rgba(255, 42, 26, 0.28));
 }
 
 .btn-toggle-sm {
-  --btn-depth: 5px;
+  --btn-depth: 4px;
   padding: 0.5625rem 0.9375rem;
   font-size: 0.6875rem;
   min-height: 40px;
 }
 
 .btn-toggle-sm:hover {
-  --btn-depth: 7px;
+  --btn-depth: 2px;
 }
 
 /* Round icon controls */
 .btn-icon-3d {
-  --btn-depth: 5px;
+  --btn-depth: 4px;
+  --btn-depth-color: #0a0a0a;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -303,28 +280,21 @@ body {
   color: var(--text-primary);
   backdrop-filter: blur(8px);
   box-shadow:
+    0 var(--btn-depth) 0 0 var(--btn-depth-color),
+    0 calc(var(--btn-depth) + 3px) calc(var(--btn-depth) + 8px) rgba(0, 0, 0, 0.3),
     0 2px 0 rgba(255, 255, 255, 0.12) inset,
     0 -3px 0 rgba(0, 0, 0, 0.35) inset;
-  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.45));
-}
-
-.btn-icon-3d::after {
-  left: 4px;
-  right: 4px;
-  border-radius: 0 0 9999px 9999px;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0.9) 100%);
 }
 
 .btn-icon-3d:hover {
-  --btn-depth: 8px;
+  --btn-depth: 2px;
   transform: translateY(-3px);
   border-color: var(--accent);
-  filter: drop-shadow(0 12px 20px rgba(0, 0, 0, 0.5)) drop-shadow(0 6px 14px rgba(255, 42, 26, 0.22));
 }
 
 .btn-icon-3d:active {
-  --btn-depth: 2px;
-  transform: translateY(4px);
+  --btn-depth: 1px;
+  transform: translateY(2px);
 }
 
 /* Film grain overlay */

@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import { Navigation } from "@/components/layout/Navigation";
 import { Footer } from "@/components/layout/Footer";
 import { AnalyticsProvider } from "@/components/analytics/AnalyticsProvider";
+import { SmoothScroll } from "@/components/layout/SmoothScroll";
 
 type Props = {
   children: React.ReactNode;
@@ -28,6 +29,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   return (
     <NextIntlClientProvider messages={messages}>
       <AnalyticsProvider locale={locale as "en" | "it"}>
+        <SmoothScroll />
         <Navigation />
         <main className="flex-1">{children}</main>
         <Footer />
