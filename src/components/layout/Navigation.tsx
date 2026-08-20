@@ -136,7 +136,7 @@ export function Navigation() {
 
             <button
               type="button"
-              className="md:hidden btn-icon-3d min-w-[44px] min-h-[44px] w-11 h-11"
+              className="btn-icon-3d min-w-[44px] min-h-[44px] w-11 h-11 !hidden max-md:!inline-flex"
               onClick={() => setOpen(!open)}
               aria-expanded={open}
               aria-label={open ? "Close menu" : "Open menu"}
