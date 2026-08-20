@@ -6,8 +6,8 @@ import Lenis from "lenis";
 import "lenis/dist/lenis.css";
 
 /**
- * Lenis with native-like tuning: real touch scroll on mobile, wheel multiplier 1,
- * subtle lerp. Disabled when prefers-reduced-motion is set.
+ * Lenis smooth scroll on wheel and touch (same lerp on desktop + mobile).
+ * Disabled when prefers-reduced-motion is set.
  */
 export function SmoothScroll() {
   const pathname = usePathname();
@@ -22,7 +22,8 @@ export function SmoothScroll() {
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 1,
-      syncTouch: false,
+      syncTouch: true,
+      syncTouchLerp: 0.08,
       autoRaf: true,
     });
 
