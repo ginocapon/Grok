@@ -18,7 +18,7 @@ export function SmoothScroll() {
     if (reducedMotion.matches) return;
 
     const lenis = new Lenis({
-      lerp: 0.1,
+      lerp: 0.08,
       smoothWheel: true,
       wheelMultiplier: 1,
       touchMultiplier: 1,
