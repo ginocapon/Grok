@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "@/components/home/Hero";
+import { HomeFirstVisitIntro } from "@/components/home/HomeFirstVisitIntro";
 import { HomeIntro } from "@/components/home/HomeIntro";
 import { FeaturedProjects } from "@/components/home/FeaturedProjects";
 import { AboutPreview } from "@/components/home/AboutPreview";
@@ -37,13 +38,13 @@ export default async function HomePage({ params }: Props) {
   ]);
 
   return (
-    <>
+    <HomeFirstVisitIntro>
       <Hero posterUrl={settings.hero.posterUrl} videoUrl={settings.hero.videoUrl} />
       <HomeIntro />
       <FeaturedProjects projects={projects} />
       <AboutPreview />
       <FeaturedBlog articles={articles} />
       <HomeContact />
-    </>
+    </HomeFirstVisitIntro>
   );
 }
